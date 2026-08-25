@@ -19,44 +19,44 @@ const ICONS = {
 const ICON_KEYS = Object.keys(ICONS);
 
 const COLORS = [
-  { name: "ذهبي", value: "#E89D5A" },
-  { name: "أخضر", value: "#139299" },
-  { name: "كحلي", value: "#2C4A6E" },
-  { name: "خمري", value: "#8C3B4A" },
-  { name: "نحاسي", value: "#A85C32" },
-  { name: "بنفسجي", value: "#5B4B8A" },
-  { name: "فيروزي", value: "#2F6B6A" },
-  { name: "كحلي داكن", value: "#1F3A5F" },
+  { name: "Ø°Ù‡Ø¨ÙŠ", value: "#E89D5A" },
+  { name: "Ø£Ø®Ø¶Ø±", value: "#139299" },
+  { name: "ÙƒØ­Ù„ÙŠ", value: "#2C4A6E" },
+  { name: "Ø®Ù…Ø±ÙŠ", value: "#8C3B4A" },
+  { name: "Ù†Ø­Ø§Ø³ÙŠ", value: "#A85C32" },
+  { name: "Ø¨Ù†ÙØ³Ø¬ÙŠ", value: "#5B4B8A" },
+  { name: "ÙÙŠØ±ÙˆØ²ÙŠ", value: "#2F6B6A" },
+  { name: "ÙƒØ­Ù„ÙŠ Ø¯Ø§ÙƒÙ†", value: "#1F3A5F" },
 ];
 
-// الأقسام والحساب الأولي — يُنشأان تلقائيًا أول مرة يُفتح فيها الموقع فقط
-// type: "submission" (تسليم ملفات/روابط، الافتراضي) أو "attendance" (نظام حضور وغياب)
+// Ø§Ù„Ø£Ù‚Ø³Ø§Ù… ÙˆØ§Ù„Ø­Ø³Ø§Ø¨ Ø§Ù„Ø£ÙˆÙ„ÙŠ â€” ÙŠÙÙ†Ø´Ø£Ø§Ù† ØªÙ„Ù‚Ø§Ø¦ÙŠÙ‹Ø§ Ø£ÙˆÙ„ Ù…Ø±Ø© ÙŠÙÙØªØ­ ÙÙŠÙ‡Ø§ Ø§Ù„Ù…ÙˆÙ‚Ø¹ ÙÙ‚Ø·
+// type: "submission" (ØªØ³Ù„ÙŠÙ… Ù…Ù„ÙØ§Øª/Ø±ÙˆØ§Ø¨Ø·ØŒ Ø§Ù„Ø§ÙØªØ±Ø§Ø¶ÙŠ) Ø£Ùˆ "attendance" (Ù†Ø¸Ø§Ù… Ø­Ø¶ÙˆØ± ÙˆØºÙŠØ§Ø¨)
 const DEFAULT_ACTIVITIES = [
-  { id: "act_montage", name: "المونتاج", icon: "Film", color: "#2C4A6E", type: "submission" },
-  { id: "act_photo", name: "التصوير", icon: "Camera", color: "#A85C32", type: "submission" },
-  { id: "act_radio", name: "الإذاعة المدرسية", icon: "Radio", color: "#E89D5A", type: "attendance" },
-  { id: "act_design", name: "التصاميم", icon: "Palette", color: "#5B4B8A", type: "submission" },
-  { id: "act_ai", name: "الذكاء الاصطناعي", icon: "Bot", color: "#2F6B6A", type: "submission" },
-  { id: "act_scouts", name: "الكشافة", icon: "Compass", color: "#139299", type: "submission" },
-  { id: "act_events", name: "تنظيم الفعاليات", icon: "CalendarDays", color: "#8C3B4A", type: "submission" },
-  { id: "act_order", name: "النظام", icon: "Flag", color: "#1F3A5F", type: "submission" },
+  { id: "act_montage", name: "Ø§Ù„Ù…ÙˆÙ†ØªØ§Ø¬", icon: "Film", color: "#2C4A6E", type: "submission" },
+  { id: "act_photo", name: "Ø§Ù„ØªØµÙˆÙŠØ±", icon: "Camera", color: "#A85C32", type: "submission" },
+  { id: "act_radio", name: "Ø§Ù„Ø¥Ø°Ø§Ø¹Ø© Ø§Ù„Ù…Ø¯Ø±Ø³ÙŠØ©", icon: "Radio", color: "#E89D5A", type: "attendance" },
+  { id: "act_design", name: "Ø§Ù„ØªØµØ§Ù…ÙŠÙ…", icon: "Palette", color: "#5B4B8A", type: "submission" },
+  { id: "act_ai", name: "Ø§Ù„Ø°ÙƒØ§Ø¡ Ø§Ù„Ø§ØµØ·Ù†Ø§Ø¹ÙŠ", icon: "Bot", color: "#2F6B6A", type: "submission" },
+  { id: "act_scouts", name: "Ø§Ù„ÙƒØ´Ø§ÙØ©", icon: "Compass", color: "#139299", type: "submission" },
+  { id: "act_events", name: "ØªÙ†Ø¸ÙŠÙ… Ø§Ù„ÙØ¹Ø§Ù„ÙŠØ§Øª", icon: "CalendarDays", color: "#8C3B4A", type: "submission" },
+  { id: "act_order", name: "Ø§Ù„Ù†Ø¸Ø§Ù…", icon: "Flag", color: "#1F3A5F", type: "submission" },
 ];
 const DEFAULT_MEMBERS = [];
 
 const TABS = [
-  { key: "home", label: "الرئيسية", icon: Home },
-  { key: "sections", label: "الأقسام", icon: LayoutGrid },
-  { key: "mytasks", label: "مهماتي", icon: ListChecks },
-  { key: "gallery", label: "صور الإذاعة", icon: ImageIcon },
-  { key: "students", label: "أسماء الطلاب", icon: Users },
-  { key: "top", label: "أفضل الطلاب", icon: Award },
+  { key: "home", label: "Ø§Ù„Ø±Ø¦ÙŠØ³ÙŠØ©", icon: Home },
+  { key: "sections", label: "Ø§Ù„Ø£Ù‚Ø³Ø§Ù…", icon: LayoutGrid },
+  { key: "mytasks", label: "Ù…Ù‡Ù…Ø§ØªÙŠ", icon: ListChecks },
+  { key: "gallery", label: "ØµÙˆØ± Ø§Ù„Ø¥Ø°Ø§Ø¹Ø©", icon: ImageIcon },
+  { key: "students", label: "Ø£Ø³Ù…Ø§Ø¡ Ø§Ù„Ø·Ù„Ø§Ø¨", icon: Users },
+  { key: "top", label: "Ø£ÙØ¶Ù„ Ø§Ù„Ø·Ù„Ø§Ø¨", icon: Award },
 ];
 
 function roleLabel(m) {
   if (!m) return "";
   if (m.role === "superadmin") return "Owner";
-  if (m.role === "leader") return m.leaderTitle === "deputy" ? "نائب رئيس القسم" : "رئيس القسم";
-  return "عضو";
+  if (m.role === "leader") return m.leaderTitle === "deputy" ? "Ù†Ø§Ø¦Ø¨ Ø±Ø¦ÙŠØ³ Ø§Ù„Ù‚Ø³Ù…" : "Ø±Ø¦ÙŠØ³ Ø§Ù„Ù‚Ø³Ù…";
+  return "Ø¹Ø¶Ùˆ";
 }
 function roleBadgeColor(m) {
   if (!m) return "#6B7280";
@@ -155,7 +155,7 @@ function Field({ label, children }) {
 
 const inputStyle = { border: "1px solid #E4DCC8" };
 
-// قائمة الأقسام التي ينتمي لها العضو: عضو عادي دائمًا قسم واحد، أما الرئيس/النائب فقد ينتمي لأكثر من قسم
+// Ù‚Ø§Ø¦Ù…Ø© Ø§Ù„Ø£Ù‚Ø³Ø§Ù… Ø§Ù„ØªÙŠ ÙŠÙ†ØªÙ…ÙŠ Ù„Ù‡Ø§ Ø§Ù„Ø¹Ø¶Ùˆ: Ø¹Ø¶Ùˆ Ø¹Ø§Ø¯ÙŠ Ø¯Ø§Ø¦Ù…Ù‹Ø§ Ù‚Ø³Ù… ÙˆØ§Ø­Ø¯ØŒ Ø£Ù…Ø§ Ø§Ù„Ø±Ø¦ÙŠØ³/Ø§Ù„Ù†Ø§Ø¦Ø¨ ÙÙ‚Ø¯ ÙŠÙ†ØªÙ…ÙŠ Ù„Ø£ÙƒØ«Ø± Ù…Ù† Ù‚Ø³Ù…
 function memberActivityIds(member) {
   if (!member) return [];
   if (member.role === "leader" && Array.isArray(member.activityIds) && member.activityIds.length > 0) return member.activityIds;
@@ -163,15 +163,15 @@ function memberActivityIds(member) {
 }
 function belongsToActivity(member, activityId) { return memberActivityIds(member).includes(activityId); }
 
-// عدد المهام/الجلسات التي فات موعدها ولم يسلّمها أو يحضرها العضو (خام، بدون احتساب أي رجوع سابق)
+// Ø¹Ø¯Ø¯ Ø§Ù„Ù…Ù‡Ø§Ù…/Ø§Ù„Ø¬Ù„Ø³Ø§Øª Ø§Ù„ØªÙŠ ÙØ§Øª Ù…ÙˆØ¹Ø¯Ù‡Ø§ ÙˆÙ„Ù… ÙŠØ³Ù„Ù‘Ù…Ù‡Ø§ Ø£Ùˆ ÙŠØ­Ø¶Ø±Ù‡Ø§ Ø§Ù„Ø¹Ø¶Ùˆ (Ø®Ø§Ù…ØŒ Ø¨Ø¯ÙˆÙ† Ø§Ø­ØªØ³Ø§Ø¨ Ø£ÙŠ Ø±Ø¬ÙˆØ¹ Ø³Ø§Ø¨Ù‚)
 function missedTasksRaw(member, data) {
   const now = Date.now();
   const myActivities = memberActivityIds(member);
   return data.tasks.filter((t) => {
     if (!myActivities.includes(t.activityId)) return false;
+    if (Array.isArray(t.assignedMemberIds) && t.assignedMemberIds.length > 0 && !t.assignedMemberIds.includes(member.id)) return false;
     const sub = data.submissions.find((s) => s.taskId === t.id && s.memberId === member.id);
     if (t.type === "attendance") {
-      if (Array.isArray(t.assignedMemberIds) && t.assignedMemberIds.length > 0 && !t.assignedMemberIds.includes(member.id)) return false;
       if (sub && sub.status === "present") return false;
       if (sub && sub.status === "absent") return true;
       if (!t.dueDate) return false;
@@ -182,7 +182,7 @@ function missedTasksRaw(member, data) {
     return !sub;
   }).length;
 }
-// عدد المهام الفائتة المحتسبة فعليًا للإنذارات (بعد خصم ما تم تجاوزه عند آخر إرجاع للعضو)
+// Ø¹Ø¯Ø¯ Ø§Ù„Ù…Ù‡Ø§Ù… Ø§Ù„ÙØ§Ø¦ØªØ© Ø§Ù„Ù…Ø­ØªØ³Ø¨Ø© ÙØ¹Ù„ÙŠÙ‹Ø§ Ù„Ù„Ø¥Ù†Ø°Ø§Ø±Ø§Øª (Ø¨Ø¹Ø¯ Ø®ØµÙ… Ù…Ø§ ØªÙ… ØªØ¬Ø§ÙˆØ²Ù‡ Ø¹Ù†Ø¯ Ø¢Ø®Ø± Ø¥Ø±Ø¬Ø§Ø¹ Ù„Ù„Ø¹Ø¶Ùˆ)
 function effectiveMissed(member, data) {
   return Math.max(0, missedTasksRaw(member, data) - (member.missedBaseline || 0));
 }
@@ -268,7 +268,7 @@ export default function SchoolActivitiesApp() {
   async function init() {
     setLoading(true);
     try {
-      // أولًا نحاول تحميل البيانات المحفوظة من Supabase.
+      // Ø£ÙˆÙ„Ù‹Ø§ Ù†Ø­Ø§ÙˆÙ„ ØªØ­Ù…ÙŠÙ„ Ø§Ù„Ø¨ÙŠØ§Ù†Ø§Øª Ø§Ù„Ù…Ø­ÙÙˆØ¸Ø© Ù…Ù† Supabase.
       const { data: remote, error: remoteError } = await supabase
         .from("app_data")
         .select("data")
@@ -278,7 +278,7 @@ export default function SchoolActivitiesApp() {
       if (remoteError) throw remoteError;
 
       if (remote?.data) {
-        // البيانات الموجودة في Supabase هي المصدر الأساسي.
+        // Ø§Ù„Ø¨ÙŠØ§Ù†Ø§Øª Ø§Ù„Ù…ÙˆØ¬ÙˆØ¯Ø© ÙÙŠ Supabase Ù‡ÙŠ Ø§Ù„Ù…ØµØ¯Ø± Ø§Ù„Ø£Ø³Ø§Ø³ÙŠ.
         let parsed = remote.data;
         let members = (parsed.members || []).filter((m) => m.id !== "member_superadmin");
         let activities = parsed.activities || [];
@@ -286,7 +286,7 @@ export default function SchoolActivitiesApp() {
 
         if (!members.some((m) => m.id === "member_test")) {
           const testActivityId = (activities.find((a) => a.id === "act_montage") || activities[0])?.id || null;
-          members = [...members, { id: "member_test", name: "عضو تجريبي", phone: "0512345678", role: "member", activityId: testActivityId, section: "", photo: "" }];
+          members = [...members, { id: "member_test", name: "Ø¹Ø¶Ùˆ ØªØ¬Ø±ÙŠØ¨ÙŠ", phone: "0512345678", role: "member", activityId: testActivityId, section: "", photo: "" }];
           changed = true;
         }
 
@@ -297,7 +297,7 @@ export default function SchoolActivitiesApp() {
         }
 
         if (!activities.some((a) => a.id === "act_order")) {
-          activities = [...activities, { id: "act_order", name: "النظام", icon: "Flag", color: "#1F3A5F", type: "submission" }];
+          activities = [...activities, { id: "act_order", name: "Ø§Ù„Ù†Ø¸Ø§Ù…", icon: "Flag", color: "#1F3A5F", type: "submission" }];
           changed = true;
         }
 
@@ -319,7 +319,7 @@ export default function SchoolActivitiesApp() {
           if (error) throw error;
         }
       } else {
-        // إذا كانت القاعدة فارغة، نحاول ترحيل البيانات المحلية الموجودة مسبقًا.
+        // Ø¥Ø°Ø§ ÙƒØ§Ù†Øª Ø§Ù„Ù‚Ø§Ø¹Ø¯Ø© ÙØ§Ø±ØºØ©ØŒ Ù†Ø­Ø§ÙˆÙ„ ØªØ±Ø­ÙŠÙ„ Ø§Ù„Ø¨ÙŠØ§Ù†Ø§Øª Ø§Ù„Ù…Ø­Ù„ÙŠØ© Ø§Ù„Ù…ÙˆØ¬ÙˆØ¯Ø© Ù…Ø³Ø¨Ù‚Ù‹Ø§.
         let seeded = null;
         try {
           const local = await window.storage.get(STORAGE_KEY, true);
@@ -347,7 +347,7 @@ export default function SchoolActivitiesApp() {
       }
     } catch (err) {
       console.error("Supabase init error:", err);
-      // لا نخلي الموقع ينهار إذا تعذر الاتصال مؤقتًا.
+      // Ù„Ø§ Ù†Ø®Ù„ÙŠ Ø§Ù„Ù…ÙˆÙ‚Ø¹ ÙŠÙ†Ù‡Ø§Ø± Ø¥Ø°Ø§ ØªØ¹Ø°Ø± Ø§Ù„Ø§ØªØµØ§Ù„ Ù…Ø¤Ù‚ØªÙ‹Ø§.
       try {
         const res = await window.storage.get(STORAGE_KEY, true);
         if (res?.value) {
@@ -361,8 +361,8 @@ export default function SchoolActivitiesApp() {
     }
 
     try {
-      const sel = await window.storage.get(CURRENT_USER_KEY, false);
-      if (sel?.value) setCurrentUserId(sel.value);
+      const sel = localStorage.getItem(CURRENT_USER_KEY);
+      if (sel) setCurrentUserId(sel);
     } catch (err) {}
 
     setLoading(false);
@@ -383,15 +383,15 @@ export default function SchoolActivitiesApp() {
 
       if (error) throw error;
 
-      // نسخة محلية احتياطية فقط، بينما Supabase هو التخزين الأساسي.
+      // Ù†Ø³Ø®Ø© Ù…Ø­Ù„ÙŠØ© Ø§Ø­ØªÙŠØ§Ø·ÙŠØ© ÙÙ‚Ø·ØŒ Ø¨ÙŠÙ†Ù…Ø§ Supabase Ù‡Ùˆ Ø§Ù„ØªØ®Ø²ÙŠÙ† Ø§Ù„Ø£Ø³Ø§Ø³ÙŠ.
       try {
         await window.storage.set(STORAGE_KEY, JSON.stringify(next), true);
       } catch (e) {}
 
-      showToast("تم الحفظ");
+      showToast("ØªÙ… Ø§Ù„Ø­ÙØ¸");
     } catch (err) {
       console.error("Supabase save error:", err);
-      showToast("تعذر الحفظ، تحقق من الاتصال", "error");
+      showToast("ØªØ¹Ø°Ø± Ø§Ù„Ø­ÙØ¸ØŒ ØªØ­Ù‚Ù‚ Ù…Ù† Ø§Ù„Ø§ØªØµØ§Ù„", "error");
     } finally {
       setSaving(false);
     }
@@ -401,12 +401,12 @@ function showToast(msg, type = "success") { setToast({ msg, type }); setTimeout(
 
   function login(memberId) {
     setCurrentUserId(memberId); setShowLogin(false);
-    window.storage.set(CURRENT_USER_KEY, memberId, false).catch(() => {});
-    showToast("تم تسجيل الدخول");
+    localStorage.setItem(CURRENT_USER_KEY, memberId);
+    showToast("ØªÙ… ØªØ³Ø¬ÙŠÙ„ Ø§Ù„Ø¯Ø®ÙˆÙ„");
   }
   function logout() {
     setCurrentUserId(null); setOpenActivityId(null);
-    window.storage.delete(CURRENT_USER_KEY, false).catch(() => {});
+    localStorage.removeItem(CURRENT_USER_KEY);
   }
 
   const currentUser = data.members.find((m) => m.id === currentUserId) || null;
@@ -414,11 +414,11 @@ function showToast(msg, type = "success") { setToast({ msg, type }); setTimeout(
   const isLeader = currentUser?.role === "leader";
   const canManageSection = (activityId) => isSuperAdmin || (isLeader && belongsToActivity(currentUser, activityId));
   const canManageSite = isSuperAdmin;
-  // إضافة النقاط: رئيس القسم فقط (وليس النائب) أو Owner
+  // Ø¥Ø¶Ø§ÙØ© Ø§Ù„Ù†Ù‚Ø§Ø·: Ø±Ø¦ÙŠØ³ Ø§Ù„Ù‚Ø³Ù… ÙÙ‚Ø· (ÙˆÙ„ÙŠØ³ Ø§Ù„Ù†Ø§Ø¦Ø¨) Ø£Ùˆ Owner
   const canAddBonusPoints = (member) => isSuperAdmin || (isLeader && currentUser.leaderTitle === "head" && memberActivityIds(currentUser).some((id) => belongsToActivity(member, id)));
-  // إرجاع العضو المطرود: الرئيس أو نائبه أو Owner
+  // Ø¥Ø±Ø¬Ø§Ø¹ Ø§Ù„Ø¹Ø¶Ùˆ Ø§Ù„Ù…Ø·Ø±ÙˆØ¯: Ø§Ù„Ø±Ø¦ÙŠØ³ Ø£Ùˆ Ù†Ø§Ø¦Ø¨Ù‡ Ø£Ùˆ Owner
   const canReinstate = (member) => isSuperAdmin || (isLeader && memberActivityIds(currentUser).some((id) => belongsToActivity(member, id)));
-  // إسناد مهمة شخصية: الـOwner لأي رئيس/نائب، أو رئيس القسم لنائبه في نفس القسم
+  // Ø¥Ø³Ù†Ø§Ø¯ Ù…Ù‡Ù…Ø© Ø´Ø®ØµÙŠØ©: Ø§Ù„Ù€Owner Ù„Ø£ÙŠ Ø±Ø¦ÙŠØ³/Ù†Ø§Ø¦Ø¨ØŒ Ø£Ùˆ Ø±Ø¦ÙŠØ³ Ø§Ù„Ù‚Ø³Ù… Ù„Ù†Ø§Ø¦Ø¨Ù‡ ÙÙŠ Ù†ÙØ³ Ø§Ù„Ù‚Ø³Ù…
   const canAssignPersonalTask = (member) => {
     if (!currentUser || member.role !== "leader") return false;
     if (isSuperAdmin) return true;
@@ -431,17 +431,17 @@ function showToast(msg, type = "success") { setToast({ msg, type }); setTimeout(
   function addBonusPoints(memberId, amount) {
     if (!amount) return;
     const next = { ...data, members: data.members.map((m) => (m.id === memberId ? { ...m, bonusPoints: (m.bonusPoints || 0) + amount } : m)) };
-    persist(next); showToast("تم تحديث النقاط");
+    persist(next); showToast("ØªÙ… ØªØ­Ø¯ÙŠØ« Ø§Ù„Ù†Ù‚Ø§Ø·");
   }
   function reinstateMember(memberId) {
     const target = data.members.find((m) => m.id === memberId);
     if (!target) return;
     const raw = missedTasksRaw(target, data);
     const next = { ...data, members: data.members.map((m) => (m.id === memberId ? { ...m, dismissed: false, missedBaseline: raw } : m)) };
-    persist(next); showToast("تم إرجاع العضو");
+    persist(next); showToast("ØªÙ… Ø¥Ø±Ø¬Ø§Ø¹ Ø§Ù„Ø¹Ø¶Ùˆ");
   }
 
-  // فحص تلقائي: طرد أي عضو تجاوزت مهامه الفائتة الحد المسموح (٧) ولم يكن مطرودًا مسبقًا
+  // ÙØ­Øµ ØªÙ„Ù‚Ø§Ø¦ÙŠ: Ø·Ø±Ø¯ Ø£ÙŠ Ø¹Ø¶Ùˆ ØªØ¬Ø§ÙˆØ²Øª Ù…Ù‡Ø§Ù…Ù‡ Ø§Ù„ÙØ§Ø¦ØªØ© Ø§Ù„Ø­Ø¯ Ø§Ù„Ù…Ø³Ù…ÙˆØ­ (Ù§) ÙˆÙ„Ù… ÙŠÙƒÙ† Ù…Ø·Ø±ÙˆØ¯Ù‹Ø§ Ù…Ø³Ø¨Ù‚Ù‹Ø§
   useEffect(() => {
     if (loading) return;
     let changed = false;
@@ -458,7 +458,7 @@ function showToast(msg, type = "success") { setToast({ msg, type }); setTimeout(
     const next = activity.id
       ? { ...data, activities: data.activities.map((a) => (a.id === activity.id ? activity : a)) }
       : { ...data, activities: [...data.activities, { ...activity, id: "act_" + Date.now() }] };
-    persist(next); setActivityModal(null); showToast("تم حفظ القسم");
+    persist(next); setActivityModal(null); showToast("ØªÙ… Ø­ÙØ¸ Ø§Ù„Ù‚Ø³Ù…");
   }
   function deleteActivity(id) {
     const taskIds = data.tasks.filter((t) => t.activityId === id).map((t) => t.id);
@@ -478,7 +478,7 @@ function showToast(msg, type = "success") { setToast({ msg, type }); setTimeout(
       tasks: data.tasks.filter((t) => t.activityId !== id),
       submissions: data.submissions.filter((s) => !taskIds.includes(s.taskId)),
     };
-    persist(next); setConfirmDelete(null); showToast("تم حذف القسم");
+    persist(next); setConfirmDelete(null); showToast("ØªÙ… Ø­Ø°Ù Ø§Ù„Ù‚Ø³Ù…");
     if (openActivityId === id) setOpenActivityId(null);
     if (studentsFilter === id) setStudentsFilter("all");
   }
@@ -488,11 +488,11 @@ function showToast(msg, type = "success") { setToast({ msg, type }); setTimeout(
     const next = member.id
       ? { ...data, members: data.members.map((m) => (m.id === member.id ? member : m)) }
       : { ...data, members: [...data.members, { ...member, id: "member_" + Date.now() }] };
-    persist(next); setMemberModal(null); showToast("تم حفظ بيانات العضو");
+    persist(next); setMemberModal(null); showToast("ØªÙ… Ø­ÙØ¸ Ø¨ÙŠØ§Ù†Ø§Øª Ø§Ù„Ø¹Ø¶Ùˆ");
   }
   function deleteMember(id) {
     const next = { ...data, members: data.members.filter((m) => m.id !== id), submissions: data.submissions.filter((s) => s.memberId !== id) };
-    persist(next); setConfirmDelete(null); showToast("تم حذف العضو");
+    persist(next); setConfirmDelete(null); showToast("ØªÙ… Ø­Ø°Ù Ø§Ù„Ø¹Ø¶Ùˆ");
     if (currentUserId === id) logout();
   }
 
@@ -501,11 +501,11 @@ function showToast(msg, type = "success") { setToast({ msg, type }); setTimeout(
     const next = task.id
       ? { ...data, tasks: data.tasks.map((t) => (t.id === task.id ? task : t)) }
       : { ...data, tasks: [...data.tasks, { ...task, id: "task_" + Date.now() }] };
-    persist(next); setTaskModal(null); showToast("تم حفظ المهمة");
+    persist(next); setTaskModal(null); showToast("ØªÙ… Ø­ÙØ¸ Ø§Ù„Ù…Ù‡Ù…Ø©");
   }
   function deleteTask(id) {
     const next = { ...data, tasks: data.tasks.filter((t) => t.id !== id), submissions: data.submissions.filter((s) => s.taskId !== id) };
-    persist(next); setConfirmDelete(null); showToast("تم حذف المهمة");
+    persist(next); setConfirmDelete(null); showToast("ØªÙ… Ø­Ø°Ù Ø§Ù„Ù…Ù‡Ù…Ø©");
   }
 
   // ---------- submissions ----------
@@ -515,20 +515,20 @@ function showToast(msg, type = "success") { setToast({ msg, type }); setTimeout(
     const existing = getSubmission(currentUser.id, taskId);
     const record = { id: existing ? existing.id : "sub_" + Date.now(), taskId, activityId, memberId: currentUser.id, image, link, note, submittedAt: new Date().toISOString() };
     const next = { ...data, submissions: existing ? data.submissions.map((s) => (s.id === existing.id ? record : s)) : [...data.submissions, record] };
-    persist(next); setSubmissionModal(null); showToast("تم إرسال التسليم، يظهر الآن في صفحة القسم");
+    persist(next); setSubmissionModal(null); showToast("ØªÙ… Ø¥Ø±Ø³Ø§Ù„ Ø§Ù„ØªØ³Ù„ÙŠÙ…ØŒ ÙŠØ¸Ù‡Ø± Ø§Ù„Ø¢Ù† ÙÙŠ ØµÙØ­Ø© Ø§Ù„Ù‚Ø³Ù…");
   }
-  function deleteSubmission(id) { persist({ ...data, submissions: data.submissions.filter((s) => s.id !== id) }); setConfirmDelete(null); showToast("تم حذف التسليم"); }
+  function deleteSubmission(id) { persist({ ...data, submissions: data.submissions.filter((s) => s.id !== id) }); setConfirmDelete(null); showToast("ØªÙ… Ø­Ø°Ù Ø§Ù„ØªØ³Ù„ÙŠÙ…"); }
 
-  // ---------- attendance (حضور وغياب) ----------
+  // ---------- attendance (Ø­Ø¶ÙˆØ± ÙˆØºÙŠØ§Ø¨) ----------
   function checkIn(taskId) {
     if (!currentUser) return;
     const task = data.tasks.find((t) => t.id === taskId);
     if (!task) return;
     const existing = getSubmission(currentUser.id, taskId);
-    if (existing && existing.status === "present") return; // مؤكد حضوره مسبقًا
+    if (existing && existing.status === "present") return; // Ù…Ø¤ÙƒØ¯ Ø­Ø¶ÙˆØ±Ù‡ Ù…Ø³Ø¨Ù‚Ù‹Ø§
     const record = { id: existing ? existing.id : "sub_" + Date.now(), taskId, activityId: task.activityId, memberId: currentUser.id, status: "pending", selfCheckedIn: true, submittedAt: new Date().toISOString() };
     const next = { ...data, submissions: existing ? data.submissions.map((s) => (s.id === existing.id ? record : s)) : [...data.submissions, record] };
-    persist(next); showToast("تم تسجيل حضورك، بانتظار مراجعة رئيس القسم");
+    persist(next); showToast("ØªÙ… ØªØ³Ø¬ÙŠÙ„ Ø­Ø¶ÙˆØ±ÙƒØŒ Ø¨Ø§Ù†ØªØ¸Ø§Ø± Ù…Ø±Ø§Ø¬Ø¹Ø© Ø±Ø¦ÙŠØ³ Ø§Ù„Ù‚Ø³Ù…");
   }
   function reviewAttendance(taskId, memberId, status) {
     const task = data.tasks.find((t) => t.id === taskId);
@@ -536,14 +536,14 @@ function showToast(msg, type = "success") { setToast({ msg, type }); setTimeout(
     const existing = data.submissions.find((s) => s.taskId === taskId && s.memberId === memberId);
     const record = { id: existing ? existing.id : "sub_" + Date.now(), taskId, activityId: task.activityId, memberId, status, selfCheckedIn: existing?.selfCheckedIn || false, submittedAt: existing?.submittedAt || new Date().toISOString(), reviewedAt: new Date().toISOString() };
     const next = { ...data, submissions: existing ? data.submissions.map((s) => (s.id === existing.id ? record : s)) : [...data.submissions, record] };
-    persist(next); showToast(status === "present" ? "تم تسجيله حاضرًا" : "تم تسجيله غائبًا");
+    persist(next); showToast(status === "present" ? "ØªÙ… ØªØ³Ø¬ÙŠÙ„Ù‡ Ø­Ø§Ø¶Ø±Ù‹Ø§" : "ØªÙ… ØªØ³Ø¬ÙŠÙ„Ù‡ ØºØ§Ø¦Ø¨Ù‹Ø§");
   }
 
-  // ---------- personal tasks (مهام شخصية: Owner للرؤساء، والرئيس لنائبه) ----------
+  // ---------- personal tasks (Ù…Ù‡Ø§Ù… Ø´Ø®ØµÙŠØ©: Owner Ù„Ù„Ø±Ø¤Ø³Ø§Ø¡ØŒ ÙˆØ§Ù„Ø±Ø¦ÙŠØ³ Ù„Ù†Ø§Ø¦Ø¨Ù‡) ----------
   function savePersonalTask(t) {
     const record = { id: "ptask_" + Date.now(), title: t.title, description: t.description, dueDate: t.dueDate, assignedTo: t.assignedTo, assignedBy: currentUser?.id, createdAt: new Date().toISOString(), completed: false };
     persist({ ...data, personalTasks: [...data.personalTasks, record] });
-    setPersonalTaskModal(null); showToast("تم إسناد المهمة");
+    setPersonalTaskModal(null); showToast("ØªÙ… Ø¥Ø³Ù†Ø§Ø¯ Ø§Ù„Ù…Ù‡Ù…Ø©");
   }
   function togglePersonalTaskDone(id) {
     const next = { ...data, personalTasks: data.personalTasks.map((t) => (t.id === id ? { ...t, completed: !t.completed, completedAt: !t.completed ? new Date().toISOString() : null } : t)) };
@@ -551,19 +551,19 @@ function showToast(msg, type = "success") { setToast({ msg, type }); setTimeout(
   }
   function deletePersonalTask(id) {
     persist({ ...data, personalTasks: data.personalTasks.filter((t) => t.id !== id) });
-    setConfirmDelete(null); showToast("تم حذف المهمة");
+    setConfirmDelete(null); showToast("ØªÙ… Ø­Ø°Ù Ø§Ù„Ù…Ù‡Ù…Ø©");
   }
 
   // ---------- highlights ----------
   function saveHighlight(h) {
     const next = h.id ? { ...data, highlights: data.highlights.map((x) => (x.id === h.id ? h : x)) } : { ...data, highlights: [...data.highlights, { ...h, id: "hl_" + Date.now() }] };
-    persist(next); setHighlightModal(null); showToast("تم الحفظ");
+    persist(next); setHighlightModal(null); showToast("ØªÙ… Ø§Ù„Ø­ÙØ¸");
   }
-  function deleteHighlight(id) { persist({ ...data, highlights: data.highlights.filter((h) => h.id !== id) }); setConfirmDelete(null); showToast("تم الحذف"); }
+  function deleteHighlight(id) { persist({ ...data, highlights: data.highlights.filter((h) => h.id !== id) }); setConfirmDelete(null); showToast("ØªÙ… Ø§Ù„Ø­Ø°Ù"); }
 
   // ---------- gallery ----------
-  function savePhoto(p) { persist({ ...data, photos: [{ ...p, id: "ph_" + Date.now() }, ...data.photos] }); setPhotoModal(null); showToast("تمت إضافة الصورة"); }
-  function deletePhoto(id) { persist({ ...data, photos: data.photos.filter((p) => p.id !== id) }); setConfirmDelete(null); showToast("تم حذف الصورة"); }
+  function savePhoto(p) { persist({ ...data, photos: [{ ...p, id: "ph_" + Date.now() }, ...data.photos] }); setPhotoModal(null); showToast("ØªÙ…Øª Ø¥Ø¶Ø§ÙØ© Ø§Ù„ØµÙˆØ±Ø©"); }
+  function deletePhoto(id) { persist({ ...data, photos: data.photos.filter((p) => p.id !== id) }); setConfirmDelete(null); showToast("ØªÙ… Ø­Ø°Ù Ø§Ù„ØµÙˆØ±Ø©"); }
 
   const activityById = (id) => data.activities.find((a) => a.id === id);
 
@@ -617,10 +617,10 @@ function showToast(msg, type = "success") { setToast({ msg, type }); setTimeout(
       <header className="sticky top-0 z-30 backdrop-blur border-b" style={{ background: "rgba(246,243,234,0.92)", borderColor: "#E4DCC8" }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-3">
           <div className="flex items-center gap-3">
-            <img src={SCHOOL_LOGO} alt="شعار مدرسة ابن البيطار الثانوية" className="h-11 w-auto object-contain shrink-0" />
+            <img src={SCHOOL_LOGO} alt="Ø´Ø¹Ø§Ø± Ù…Ø¯Ø±Ø³Ø© Ø§Ø¨Ù† Ø§Ù„Ø¨ÙŠØ·Ø§Ø± Ø§Ù„Ø«Ø§Ù†ÙˆÙŠØ©" className="h-11 w-auto object-contain shrink-0" />
             <div>
-              <h1 className="font-extrabold text-base sm:text-lg leading-tight" style={{ fontFamily: "'Almarai', sans-serif" }}>النشاط الطلابي</h1>
-              <p className="text-xs" style={{ color: "#6B7280" }}>مهام، صور، وطلاب في مكان واحد</p>
+              <h1 className="font-extrabold text-base sm:text-lg leading-tight" style={{ fontFamily: "'Almarai', sans-serif" }}>Ø§Ù„Ù†Ø´Ø§Ø· Ø§Ù„Ø·Ù„Ø§Ø¨ÙŠ</h1>
+              <p className="text-xs" style={{ color: "#6B7280" }}>Ù…Ù‡Ø§Ù…ØŒ ØµÙˆØ±ØŒ ÙˆØ·Ù„Ø§Ø¨ ÙÙŠ Ù…ÙƒØ§Ù† ÙˆØ§Ø­Ø¯</p>
             </div>
           </div>
           {currentUser ? (
@@ -632,10 +632,10 @@ function showToast(msg, type = "success") { setToast({ msg, type }); setTimeout(
                   <p className="text-[10px] leading-tight" style={{ color: roleBadgeColor(currentUser) }}>{roleLabel(currentUser)}</p>
                 </div>
               </div>
-              <button onClick={logout} className="text-xs font-medium px-3 py-1.5 rounded-full border transition hover:bg-black/5" style={{ borderColor: "#E4DCC8" }}>خروج</button>
+              <button onClick={logout} className="text-xs font-medium px-3 py-1.5 rounded-full border transition hover:bg-black/5" style={{ borderColor: "#E4DCC8" }}>Ø®Ø±ÙˆØ¬</button>
             </div>
           ) : (
-            <button onClick={() => setShowLogin(true)} className="flex items-center gap-1.5 text-xs sm:text-sm font-medium px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-white transition hover:opacity-90" style={{ background: "#139299" }}><Lock size={14} /> تسجيل الدخول</button>
+            <button onClick={() => setShowLogin(true)} className="flex items-center gap-1.5 text-xs sm:text-sm font-medium px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-white transition hover:opacity-90" style={{ background: "#139299" }}><Lock size={14} /> ØªØ³Ø¬ÙŠÙ„ Ø§Ù„Ø¯Ø®ÙˆÙ„</button>
           )}
         </div>
         <div className="tabbar max-w-6xl mx-auto px-4 sm:px-6 pb-2 flex gap-2 overflow-x-auto">
@@ -659,7 +659,7 @@ function showToast(msg, type = "success") { setToast({ msg, type }); setTimeout(
       </header>
 
       {loading ? (
-        <div className="flex items-center justify-center py-24 gap-2" style={{ color: "#6B7280" }}><Loader2 size={18} className="animate-spin" /> جاري تحميل البيانات...</div>
+        <div className="flex items-center justify-center py-24 gap-2" style={{ color: "#6B7280" }}><Loader2 size={18} className="animate-spin" /> Ø¬Ø§Ø±ÙŠ ØªØ­Ù…ÙŠÙ„ Ø§Ù„Ø¨ÙŠØ§Ù†Ø§Øª...</div>
       ) : (
         <main className="max-w-6xl mx-auto px-4 sm:px-6 py-8">
           {activeTab === "home" && (
@@ -683,7 +683,7 @@ function showToast(msg, type = "success") { setToast({ msg, type }); setTimeout(
               onDeleteTask={(t) => setConfirmDelete({ type: "task", id: t.id, name: t.title })}
               getSubmission={getSubmission}
               onOpenSubmission={(taskId) => setSubmissionModal({ taskId })}
-              onDeleteSubmission={(s) => setConfirmDelete({ type: "submission", id: s.id, name: "التسليم" })}
+              onDeleteSubmission={(s) => setConfirmDelete({ type: "submission", id: s.id, name: "Ø§Ù„ØªØ³Ù„ÙŠÙ…" })}
               onAddMemberToSection={(activityId) => setMemberModal({ mode: "new", activityId })}
               onCheckIn={checkIn} onReviewAttendance={reviewAttendance}
             />
@@ -701,7 +701,7 @@ function showToast(msg, type = "success") { setToast({ msg, type }); setTimeout(
           )}
 
           {activeTab === "gallery" && (
-            <GalleryTab data={data} canManageSite={canManageSite} onAddPhoto={() => setPhotoModal("new")} onDeletePhoto={(p) => setConfirmDelete({ type: "photo", id: p.id, name: p.caption || "الصورة" })} />
+            <GalleryTab data={data} canManageSite={canManageSite} onAddPhoto={() => setPhotoModal("new")} onDeletePhoto={(p) => setConfirmDelete({ type: "photo", id: p.id, name: p.caption || "Ø§Ù„ØµÙˆØ±Ø©" })} />
           )}
 
           {activeTab === "students" && (
@@ -749,7 +749,7 @@ function showToast(msg, type = "success") { setToast({ msg, type }); setTimeout(
 
       {submissionModal && currentUser && (
         <SubmissionForm
-          tasks={data.tasks.filter((t) => t.type !== "attendance" && memberActivityIds(currentUser).includes(t.activityId))}
+          tasks={data.tasks.filter((t) => t.type !== "attendance" && memberActivityIds(currentUser).includes(t.activityId) && (!Array.isArray(t.assignedMemberIds) || t.assignedMemberIds.length === 0 || t.assignedMemberIds.includes(currentUser.id)))}
           initialTaskId={submissionModal.taskId}
           getExisting={(taskId) => getSubmission(currentUser.id, taskId)}
           onCancel={() => setSubmissionModal(null)}
@@ -762,21 +762,21 @@ function showToast(msg, type = "success") { setToast({ msg, type }); setTimeout(
       {photoModal && <PhotoForm onCancel={() => setPhotoModal(null)} onSave={savePhoto} />}
 
       {confirmDelete && (
-        <Modal title="تأكيد الحذف" onClose={() => setConfirmDelete(null)}>
+        <Modal title="ØªØ£ÙƒÙŠØ¯ Ø§Ù„Ø­Ø°Ù" onClose={() => setConfirmDelete(null)}>
           <div className="flex items-start gap-3">
             <AlertTriangle size={20} color="#8C3B4A" className="shrink-0 mt-0.5" />
             <p className="text-sm">
-              هل أنت متأكد من حذف {{ activity: "القسم", member: "العضو", task: "المهمة", highlight: "العنصر", photo: "الصورة", submission: "التسليم", personalTask: "المهمة الشخصية" }[confirmDelete.type]} «{confirmDelete.name}»؟
-              {confirmDelete.type === "activity" && " سيتم حذف كل الأعضاء والمهام والتسليمات المرتبطة به أيضًا."}
-              {" "}لا يمكن التراجع عن هذا الإجراء.
+              Ù‡Ù„ Ø£Ù†Øª Ù…ØªØ£ÙƒØ¯ Ù…Ù† Ø­Ø°Ù {{ activity: "Ø§Ù„Ù‚Ø³Ù…", member: "Ø§Ù„Ø¹Ø¶Ùˆ", task: "Ø§Ù„Ù…Ù‡Ù…Ø©", highlight: "Ø§Ù„Ø¹Ù†ØµØ±", photo: "Ø§Ù„ØµÙˆØ±Ø©", submission: "Ø§Ù„ØªØ³Ù„ÙŠÙ…", personalTask: "Ø§Ù„Ù…Ù‡Ù…Ø© Ø§Ù„Ø´Ø®ØµÙŠØ©" }[confirmDelete.type]} Â«{confirmDelete.name}Â»ØŸ
+              {confirmDelete.type === "activity" && " Ø³ÙŠØªÙ… Ø­Ø°Ù ÙƒÙ„ Ø§Ù„Ø£Ø¹Ø¶Ø§Ø¡ ÙˆØ§Ù„Ù…Ù‡Ø§Ù… ÙˆØ§Ù„ØªØ³Ù„ÙŠÙ…Ø§Øª Ø§Ù„Ù…Ø±ØªØ¨Ø·Ø© Ø¨Ù‡ Ø£ÙŠØ¶Ù‹Ø§."}
+              {" "}Ù„Ø§ ÙŠÙ…ÙƒÙ† Ø§Ù„ØªØ±Ø§Ø¬Ø¹ Ø¹Ù† Ù‡Ø°Ø§ Ø§Ù„Ø¥Ø¬Ø±Ø§Ø¡.
             </p>
           </div>
           <div className="flex gap-2 mt-5">
             <button onClick={() => {
               const map = { activity: deleteActivity, member: deleteMember, task: deleteTask, highlight: deleteHighlight, photo: deletePhoto, submission: deleteSubmission, personalTask: deletePersonalTask };
               map[confirmDelete.type](confirmDelete.id);
-            }} className="flex-1 py-2.5 rounded-lg text-white text-sm font-medium" style={{ background: "#8C3B4A" }}>حذف نهائي</button>
-            <button onClick={() => setConfirmDelete(null)} className="flex-1 py-2.5 rounded-lg text-sm font-medium" style={inputStyle}>إلغاء</button>
+            }} className="flex-1 py-2.5 rounded-lg text-white text-sm font-medium" style={{ background: "#8C3B4A" }}>Ø­Ø°Ù Ù†Ù‡Ø§Ø¦ÙŠ</button>
+            <button onClick={() => setConfirmDelete(null)} className="flex-1 py-2.5 rounded-lg text-sm font-medium" style={inputStyle}>Ø¥Ù„ØºØ§Ø¡</button>
           </div>
         </Modal>
       )}
@@ -788,14 +788,14 @@ function showToast(msg, type = "success") { setToast({ msg, type }); setTimeout(
       )}
       {saving && (
         <div className="fixed top-24 left-1/2 -translate-x-1/2 z-40 flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium" style={{ background: "#FBF9F3", border: "1px solid #E4DCC8", color: "#6B7280" }}>
-          <Loader2 size={12} className="animate-spin" /> جاري الحفظ...
+          <Loader2 size={12} className="animate-spin" /> Ø¬Ø§Ø±ÙŠ Ø§Ù„Ø­ÙØ¸...
         </div>
       )}
 
       <footer className="border-t mt-6" style={{ borderColor: "#E4DCC8" }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between flex-wrap gap-2 text-sm">
-          <p style={{ color: "#6B7280" }}><span className="font-bold" style={{ color: "#1B2430" }}>رائد النشاط:</span> مفرح القرني</p>
-          <p style={{ color: "#6B7280" }}><span className="font-bold" style={{ color: "#1B2430" }}>مدير المدرسة:</span> خالد الغامدي</p>
+          <p style={{ color: "#6B7280" }}><span className="font-bold" style={{ color: "#1B2430" }}>Ø±Ø§Ø¦Ø¯ Ø§Ù„Ù†Ø´Ø§Ø·:</span> Ù…ÙØ±Ø­ Ø§Ù„Ù‚Ø±Ù†ÙŠ</p>
+          <p style={{ color: "#6B7280" }}><span className="font-bold" style={{ color: "#1B2430" }}>Ù…Ø¯ÙŠØ± Ø§Ù„Ù…Ø¯Ø±Ø³Ø©:</span> Ø®Ø§Ù„Ø¯ Ø§Ù„ØºØ§Ù…Ø¯ÙŠ</p>
         </div>
       </footer>
     </div>
@@ -805,7 +805,7 @@ function showToast(msg, type = "success") { setToast({ msg, type }); setTimeout(
 /* ================= HOME ================= */
 function ShineLogo({ className }) {
   return (
-    <div className={className} style={{ position: "relative", aspectRatio: "2 / 1", overflow: "hidden" }} role="img" aria-label="شعار مدرسة ابن البيطار الثانوية">
+    <div className={className} style={{ position: "relative", aspectRatio: "2 / 1", overflow: "hidden" }} role="img" aria-label="Ø´Ø¹Ø§Ø± Ù…Ø¯Ø±Ø³Ø© Ø§Ø¨Ù† Ø§Ù„Ø¨ÙŠØ·Ø§Ø± Ø§Ù„Ø«Ø§Ù†ÙˆÙŠØ©">
       <img src={SCHOOL_LOGO} alt="" style={{ width: "100%", height: "100%", objectFit: "contain" }} />
       <div style={{
         position: "absolute", top: "-30%", left: 0, width: "30%", height: "160%",
@@ -824,18 +824,18 @@ function HomeTab({ data, onGoToAnnouncements }) {
       <section className="mb-10">
         <div className="flex items-center justify-between flex-wrap gap-6">
           <div className="max-w-xl">
-            <p className="text-sm font-semibold mb-2" style={{ color: "#E89D5A" }}>منصة النشاط الطلابي</p>
-            <h2 className="text-3xl sm:text-4xl font-extrabold leading-snug" style={{ fontFamily: "'Almarai', sans-serif" }}>النشاط الطلابي</h2>
-            <p className="mt-2 text-base font-medium" style={{ color: "#1B2430" }}>جميع الأنشطة في مكان واحد</p>
-            <p className="mt-1 text-sm" style={{ color: "#6B7280" }}>سجّل دخولك، ادخل قسمك، وسلّم مهامك.</p>
+            <p className="text-sm font-semibold mb-2" style={{ color: "#E89D5A" }}>Ù…Ù†ØµØ© Ø§Ù„Ù†Ø´Ø§Ø· Ø§Ù„Ø·Ù„Ø§Ø¨ÙŠ</p>
+            <h2 className="text-3xl sm:text-4xl font-extrabold leading-snug" style={{ fontFamily: "'Almarai', sans-serif" }}>Ø§Ù„Ù†Ø´Ø§Ø· Ø§Ù„Ø·Ù„Ø§Ø¨ÙŠ</h2>
+            <p className="mt-2 text-base font-medium" style={{ color: "#1B2430" }}>Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø£Ù†Ø´Ø·Ø© ÙÙŠ Ù…ÙƒØ§Ù† ÙˆØ§Ø­Ø¯</p>
+            <p className="mt-1 text-sm" style={{ color: "#6B7280" }}>Ø³Ø¬Ù‘Ù„ Ø¯Ø®ÙˆÙ„ÙƒØŒ Ø§Ø¯Ø®Ù„ Ù‚Ø³Ù…ÙƒØŒ ÙˆØ³Ù„Ù‘Ù… Ù…Ù‡Ø§Ù…Ùƒ.</p>
             <div className="flex gap-4 mt-5 flex-wrap">
-              <Stat value={data.activities.length} label="قسم" />
+              <Stat value={data.activities.length} label="Ù‚Ø³Ù…" />
               <div className="w-px" style={{ background: "#E4DCC8" }} />
-              <Stat value={data.members.length} label="عضو" />
+              <Stat value={data.members.length} label="Ø¹Ø¶Ùˆ" />
               <div className="w-px" style={{ background: "#E4DCC8" }} />
-              <Stat value={data.tasks.length} label="مهمة" />
+              <Stat value={data.tasks.length} label="Ù…Ù‡Ù…Ø©" />
               <div className="w-px" style={{ background: "#E4DCC8" }} />
-              <Stat value={data.submissions.length} label="تسليم" />
+              <Stat value={data.submissions.length} label="ØªØ³Ù„ÙŠÙ…" />
             </div>
           </div>
           <ShineLogo className="w-56 sm:w-80 shrink-0" />
@@ -843,14 +843,14 @@ function HomeTab({ data, onGoToAnnouncements }) {
       </section>
 
       <div className="flex items-center justify-between mb-4">
-        <h3 className="font-bold text-lg" style={{ fontFamily: "'Almarai', sans-serif" }}>أبرز الأشياء</h3>
+        <h3 className="font-bold text-lg" style={{ fontFamily: "'Almarai', sans-serif" }}>Ø£Ø¨Ø±Ø² Ø§Ù„Ø£Ø´ÙŠØ§Ø¡</h3>
         <button onClick={onGoToAnnouncements} className="flex items-center gap-1.5 text-sm font-medium px-3 py-1.5 rounded-full text-white hover:opacity-90 transition" style={{ background: "#139299" }}>
-          <Megaphone size={15} /> صفحة الإعلانات
+          <Megaphone size={15} /> ØµÙØ­Ø© Ø§Ù„Ø¥Ø¹Ù„Ø§Ù†Ø§Øª
         </button>
       </div>
 
       {data.highlights.length === 0 ? (
-        <EmptyState icon={<Sparkles size={22} color="#E89D5A" />} title="لا يوجد محتوى مميز بعد" subtitle="لم يضف Owner أي محتوى حتى الآن." />
+        <EmptyState icon={<Sparkles size={22} color="#E89D5A" />} title="Ù„Ø§ ÙŠÙˆØ¬Ø¯ Ù…Ø­ØªÙˆÙ‰ Ù…Ù…ÙŠØ² Ø¨Ø¹Ø¯" subtitle="Ù„Ù… ÙŠØ¶Ù Owner Ø£ÙŠ Ù…Ø­ØªÙˆÙ‰ Ø­ØªÙ‰ Ø§Ù„Ø¢Ù†." />
       ) : (
         <AutoCarousel items={carouselItems} />
       )}
@@ -863,14 +863,14 @@ function AnnouncementsTab({ data, canManageSite, onAddHighlight, onEditHighlight
   return (
     <>
       <div className="flex items-center justify-between mb-4">
-        <h3 className="font-bold text-lg" style={{ fontFamily: "'Almarai', sans-serif" }}>صفحة الإعلانات</h3>
-        {canManageSite && <button onClick={onAddHighlight} className="flex items-center gap-1.5 text-sm font-medium px-3 py-1.5 rounded-full text-white hover:opacity-90 transition" style={{ background: "#E89D5A" }}><Plus size={15} /> إضافة</button>}
+        <h3 className="font-bold text-lg" style={{ fontFamily: "'Almarai', sans-serif" }}>ØµÙØ­Ø© Ø§Ù„Ø¥Ø¹Ù„Ø§Ù†Ø§Øª</h3>
+        {canManageSite && <button onClick={onAddHighlight} className="flex items-center gap-1.5 text-sm font-medium px-3 py-1.5 rounded-full text-white hover:opacity-90 transition" style={{ background: "#E89D5A" }}><Plus size={15} /> Ø¥Ø¶Ø§ÙØ©</button>}
       </div>
 
       {data.highlights.length === 0 ? (
-        <EmptyState icon={<Megaphone size={22} color="#E89D5A" />} title="لا توجد إعلانات بعد"
-          subtitle={canManageSite ? "أضف أول إعلان ليظهر هنا لكل الزوار." : "لم يضف Owner أي إعلان حتى الآن."}
-          action={canManageSite && <button onClick={onAddHighlight} className="mt-3 text-sm font-medium px-4 py-2 rounded-full text-white" style={{ background: "#139299" }}>إضافة إعلان</button>} />
+        <EmptyState icon={<Megaphone size={22} color="#E89D5A" />} title="Ù„Ø§ ØªÙˆØ¬Ø¯ Ø¥Ø¹Ù„Ø§Ù†Ø§Øª Ø¨Ø¹Ø¯"
+          subtitle={canManageSite ? "Ø£Ø¶Ù Ø£ÙˆÙ„ Ø¥Ø¹Ù„Ø§Ù† Ù„ÙŠØ¸Ù‡Ø± Ù‡Ù†Ø§ Ù„ÙƒÙ„ Ø§Ù„Ø²ÙˆØ§Ø±." : "Ù„Ù… ÙŠØ¶Ù Owner Ø£ÙŠ Ø¥Ø¹Ù„Ø§Ù† Ø­ØªÙ‰ Ø§Ù„Ø¢Ù†."}
+          action={canManageSite && <button onClick={onAddHighlight} className="mt-3 text-sm font-medium px-4 py-2 rounded-full text-white" style={{ background: "#139299" }}>Ø¥Ø¶Ø§ÙØ© Ø¥Ø¹Ù„Ø§Ù†</button>} />
       ) : (
         <>
           <AutoCarousel items={carouselItems} />
@@ -906,7 +906,7 @@ function Stat({ value, label }) {
   );
 }
 
-/* ================= SECTIONS (الأقسام) ================= */
+/* ================= SECTIONS (Ø§Ù„Ø£Ù‚Ø³Ø§Ù…) ================= */
 function SectionsTab({
   data, currentUser, isSuperAdmin, canManageSection, onRequestLogin,
   openActivityId, setOpenActivityId, onAddActivity, onEditActivity, onDeleteActivity,
@@ -932,12 +932,12 @@ function SectionsTab({
 
     return (
       <div>
-        <button onClick={() => setOpenActivityId(null)} className="flex items-center gap-1.5 text-sm font-medium mb-4" style={{ color: "#6B7280" }}><ArrowRight size={15} /> رجوع للأقسام</button>
+        <button onClick={() => setOpenActivityId(null)} className="flex items-center gap-1.5 text-sm font-medium mb-4" style={{ color: "#6B7280" }}><ArrowRight size={15} /> Ø±Ø¬ÙˆØ¹ Ù„Ù„Ø£Ù‚Ø³Ø§Ù…</button>
 
         {currentUser?.dismissed && belongsToActivity(currentUser, activity.id) && (
           <div className="rounded-2xl p-4 mb-6 flex items-center gap-2" style={{ background: "#8C3B4A1A", border: "1px solid #8C3B4A" }}>
             <AlertTriangle size={18} color="#8C3B4A" />
-            <p className="text-sm" style={{ color: "#8C3B4A" }}>عضويتك موقوفة حاليًا بسبب تكرار عدم تسليم المهام. تواصل مع رئيس القسم أو نائبه لإرجاعك.</p>
+            <p className="text-sm" style={{ color: "#8C3B4A" }}>Ø¹Ø¶ÙˆÙŠØªÙƒ Ù…ÙˆÙ‚ÙˆÙØ© Ø­Ø§Ù„ÙŠÙ‹Ø§ Ø¨Ø³Ø¨Ø¨ ØªÙƒØ±Ø§Ø± Ø¹Ø¯Ù… ØªØ³Ù„ÙŠÙ… Ø§Ù„Ù…Ù‡Ø§Ù…. ØªÙˆØ§ØµÙ„ Ù…Ø¹ Ø±Ø¦ÙŠØ³ Ø§Ù„Ù‚Ø³Ù… Ø£Ùˆ Ù†Ø§Ø¦Ø¨Ù‡ Ù„Ø¥Ø±Ø¬Ø§Ø¹Ùƒ.</p>
           </div>
         )}
 
@@ -946,20 +946,20 @@ function SectionsTab({
             <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: activity.color + "22" }}><Icon size={22} color={activity.color} /></div>
             <div>
               <h3 className="font-bold text-lg" style={{ fontFamily: "'Almarai', sans-serif" }}>{activity.name}</h3>
-              <p className="text-xs" style={{ color: "#6B7280" }}>{members.length} عضو · {tasks.length} مهمة</p>
+              <p className="text-xs" style={{ color: "#6B7280" }}>{members.length} Ø¹Ø¶Ùˆ Â· {tasks.length} Ù…Ù‡Ù…Ø©</p>
             </div>
           </div>
           <div className="flex gap-2 flex-wrap">
-            {manage && <button onClick={() => onAddMemberToSection(activity.id)} className="flex items-center gap-1.5 text-sm font-medium px-3 py-1.5 rounded-full" style={inputStyle}><Plus size={15} /> عضو جديد</button>}
-            {manage && <button onClick={() => onAddTask(activity.id)} className="flex items-center gap-1.5 text-sm font-medium px-3 py-1.5 rounded-full text-white hover:opacity-90 transition" style={{ background: "#139299" }}><Plus size={15} /> {activity.type === "attendance" ? "جلسة جديدة" : "مهمة جديدة"}</button>}
+            {manage && <button onClick={() => onAddMemberToSection(activity.id)} className="flex items-center gap-1.5 text-sm font-medium px-3 py-1.5 rounded-full" style={inputStyle}><Plus size={15} /> Ø¹Ø¶Ùˆ Ø¬Ø¯ÙŠØ¯</button>}
+            {manage && <button onClick={() => onAddTask(activity.id)} className="flex items-center gap-1.5 text-sm font-medium px-3 py-1.5 rounded-full text-white hover:opacity-90 transition" style={{ background: "#139299" }}><Plus size={15} /> {activity.type === "attendance" ? "Ø¬Ù„Ø³Ø© Ø¬Ø¯ÙŠØ¯Ø©" : "Ù…Ù‡Ù…Ø© Ø¬Ø¯ÙŠØ¯Ø©"}</button>}
             {activity.type !== "attendance" && canSubmit(activity.id) && tasks.length > 0 && (
-              <button onClick={() => onOpenSubmission(null)} className="flex items-center gap-1.5 text-sm font-medium px-3 py-1.5 rounded-full text-white hover:opacity-90 transition" style={{ background: activity.color }}><Paperclip size={14} /> تسليم جديد</button>
+              <button onClick={() => onOpenSubmission(null)} className="flex items-center gap-1.5 text-sm font-medium px-3 py-1.5 rounded-full text-white hover:opacity-90 transition" style={{ background: activity.color }}><Paperclip size={14} /> ØªØ³Ù„ÙŠÙ… Ø¬Ø¯ÙŠØ¯</button>
             )}
           </div>
         </div>
 
         {tasks.length === 0 ? (
-          <EmptyState icon={<LayoutGrid size={22} color={activity.color} />} title={activity.type === "attendance" ? "لا توجد جلسات حضور بعد" : "لا توجد مهام لهذا القسم بعد"} subtitle={manage ? "أضف أول عنصر ليبدأ الأعضاء بالمشاركة." : "راجع الصفحة لاحقًا."} />
+          <EmptyState icon={<LayoutGrid size={22} color={activity.color} />} title={activity.type === "attendance" ? "Ù„Ø§ ØªÙˆØ¬Ø¯ Ø¬Ù„Ø³Ø§Øª Ø­Ø¶ÙˆØ± Ø¨Ø¹Ø¯" : "Ù„Ø§ ØªÙˆØ¬Ø¯ Ù…Ù‡Ø§Ù… Ù„Ù‡Ø°Ø§ Ø§Ù„Ù‚Ø³Ù… Ø¨Ø¹Ø¯"} subtitle={manage ? "Ø£Ø¶Ù Ø£ÙˆÙ„ Ø¹Ù†ØµØ± Ù„ÙŠØ¨Ø¯Ø£ Ø§Ù„Ø£Ø¹Ø¶Ø§Ø¡ Ø¨Ø§Ù„Ù…Ø´Ø§Ø±ÙƒØ©." : "Ø±Ø§Ø¬Ø¹ Ø§Ù„ØµÙØ­Ø© Ù„Ø§Ø­Ù‚Ù‹Ø§."} />
         ) : (
           <div className="space-y-4">
             {tasks.map((t) => {
@@ -976,13 +976,13 @@ function SectionsTab({
                       <div>
                         <p className="font-bold" style={{ fontFamily: "'Almarai', sans-serif" }}>{t.title}</p>
                         {t.description && <p className="text-sm mt-1" style={{ color: "#6B7280" }}>{t.description}</p>}
-                        {t.dueDate && <p className="text-xs mt-1.5 font-medium" style={{ color: "#6B7280" }}>موعد الجلسة: {formatDue(t.dueDate)}</p>}
-                        <p className="text-xs mt-1" style={{ color: "#6B7280" }}>عدد الطلاب المحددين: {assigned.length}</p>
+                        {t.dueDate && <p className="text-xs mt-1.5 font-medium" style={{ color: "#6B7280" }}>Ù…ÙˆØ¹Ø¯ Ø§Ù„Ø¬Ù„Ø³Ø©: {formatDue(t.dueDate)}</p>}
+                        <p className="text-xs mt-1" style={{ color: "#6B7280" }}>Ø¹Ø¯Ø¯ Ø§Ù„Ø·Ù„Ø§Ø¨ Ø§Ù„Ù…Ø­Ø¯Ø¯ÙŠÙ†: {assigned.length}</p>
                       </div>
                       <div className="flex items-center gap-2 shrink-0">
                         {canSubmit(activity.id) && (iAmAssigned
                           ? <AttendanceStatusBadge status={mine?.status} onCheckIn={() => onCheckIn(t.id)} color={activity.color} />
-                          : <span className="text-xs font-medium px-2.5 py-1 rounded-full" style={{ background: "#F6F3EA", color: "#9CA3AF" }}>غير مطلوب حضورك</span>)}
+                          : <span className="text-xs font-medium px-2.5 py-1 rounded-full" style={{ background: "#F6F3EA", color: "#9CA3AF" }}>ØºÙŠØ± Ù…Ø·Ù„ÙˆØ¨ Ø­Ø¶ÙˆØ±Ùƒ</span>)}
                         {manage && (
                           <>
                             <button onClick={() => onEditTask(t)} className="p-1.5 rounded-full hover:bg-black/5"><Pencil size={14} color="#6B7280" /></button>
@@ -1002,12 +1002,12 @@ function SectionsTab({
                               <div className="min-w-0 flex-1">
                                 <p className="text-xs font-medium truncate">{m.name}</p>
                                 <p className="text-xs" style={{ color: rec?.status === "present" ? "#139299" : rec?.status === "absent" ? "#8C3B4A" : rec?.status === "pending" ? "#E89D5A" : "#9CA3AF" }}>
-                                  {rec?.status === "present" ? "حاضر" : rec?.status === "absent" ? "غائب" : rec?.status === "pending" ? "بانتظار المراجعة" : "لم يسجّل"}
+                                  {rec?.status === "present" ? "Ø­Ø§Ø¶Ø±" : rec?.status === "absent" ? "ØºØ§Ø¦Ø¨" : rec?.status === "pending" ? "Ø¨Ø§Ù†ØªØ¸Ø§Ø± Ø§Ù„Ù…Ø±Ø§Ø¬Ø¹Ø©" : "Ù„Ù… ÙŠØ³Ø¬Ù‘Ù„"}
                                 </p>
                               </div>
                               <div className="flex gap-1 shrink-0">
-                                <button onClick={() => onReviewAttendance(t.id, m.id, "present")} className="text-xs font-medium px-2 py-1 rounded-full" style={rec?.status === "present" ? { background: "#139299", color: "white" } : { background: "white", border: "1px solid #E4DCC8" }}>حاضر</button>
-                                <button onClick={() => onReviewAttendance(t.id, m.id, "absent")} className="text-xs font-medium px-2 py-1 rounded-full" style={rec?.status === "absent" ? { background: "#8C3B4A", color: "white" } : { background: "white", border: "1px solid #E4DCC8" }}>غائب</button>
+                                <button onClick={() => onReviewAttendance(t.id, m.id, "present")} className="text-xs font-medium px-2 py-1 rounded-full" style={rec?.status === "present" ? { background: "#139299", color: "white" } : { background: "white", border: "1px solid #E4DCC8" }}>Ø­Ø§Ø¶Ø±</button>
+                                <button onClick={() => onReviewAttendance(t.id, m.id, "absent")} className="text-xs font-medium px-2 py-1 rounded-full" style={rec?.status === "absent" ? { background: "#8C3B4A", color: "white" } : { background: "white", border: "1px solid #E4DCC8" }}>ØºØ§Ø¦Ø¨</button>
                               </div>
                             </div>
                           );
@@ -1020,20 +1020,25 @@ function SectionsTab({
 
               const overdue = isOverdue(t.dueDate) && !mine;
               const taskSubmissions = data.submissions.filter((s) => s.taskId === t.id);
+              const assignedIds = Array.isArray(t.assignedMemberIds) && t.assignedMemberIds.length > 0 ? t.assignedMemberIds : null;
+              const iAmAssignedTask = !currentUser || !assignedIds || assignedIds.includes(currentUser.id);
               return (
                 <div key={t.id} className="rounded-2xl p-4 bg-white" style={{ border: "1px solid #E4DCC8" }}>
                   <div className="flex items-start justify-between gap-3">
                     <div>
                       <p className="font-bold" style={{ fontFamily: "'Almarai', sans-serif" }}>{t.title}</p>
                       {t.description && <p className="text-sm mt-1" style={{ color: "#6B7280" }}>{t.description}</p>}
-                      {t.dueDate && <p className="text-xs mt-1.5 font-medium" style={{ color: overdue ? "#8C3B4A" : "#6B7280" }}>{overdue ? "انتهى الموعد: " : "آخر موعد: "}{formatDue(t.dueDate)}</p>}
+                      {t.dueDate && <p className="text-xs mt-1.5 font-medium" style={{ color: overdue ? "#8C3B4A" : "#6B7280" }}>{overdue ? "Ø§Ù†ØªÙ‡Ù‰ Ø§Ù„Ù…ÙˆØ¹Ø¯: " : "Ø¢Ø®Ø± Ù…ÙˆØ¹Ø¯: "}{formatDue(t.dueDate)}</p>}
+                      {assignedIds && <p className="text-xs mt-1" style={{ color: "#6B7280" }}>Ù…ÙƒÙ„Ù‘Ù Ø¨Ù‡Ø§: {assignedIds.length} Ø·Ø§Ù„Ø¨</p>}
                     </div>
                     <div className="flex items-center gap-2 shrink-0">
-                      {canSubmit(activity.id) && (
+                      {canSubmit(activity.id) && (iAmAssignedTask ? (
                         mine
-                          ? <button onClick={() => onOpenSubmission(t.id)} className="text-xs font-medium px-2.5 py-1 rounded-full" style={{ background: "#1392991A", color: "#139299" }}>تم التسليم · تعديل</button>
-                          : <button onClick={() => onOpenSubmission(t.id)} className="text-xs font-medium px-2.5 py-1 rounded-full text-white" style={{ background: activity.color }}>تسليم</button>
-                      )}
+                          ? <button onClick={() => onOpenSubmission(t.id)} className="text-xs font-medium px-2.5 py-1 rounded-full" style={{ background: "#1392991A", color: "#139299" }}>ØªÙ… Ø§Ù„ØªØ³Ù„ÙŠÙ… Â· ØªØ¹Ø¯ÙŠÙ„</button>
+                          : <button onClick={() => onOpenSubmission(t.id)} className="text-xs font-medium px-2.5 py-1 rounded-full text-white" style={{ background: activity.color }}>ØªØ³Ù„ÙŠÙ…</button>
+                      ) : (
+                        <span className="text-xs font-medium px-2.5 py-1 rounded-full" style={{ background: "#F6F3EA", color: "#9CA3AF" }}>ØºÙŠØ± Ù…ÙƒÙ„Ù‘Ù Ø¨Ù‡Ø§</span>
+                      ))}
                       {manage && (
                         <>
                           <button onClick={() => onEditTask(t)} className="p-1.5 rounded-full hover:bg-black/5"><Pencil size={14} color="#6B7280" /></button>
@@ -1051,8 +1056,8 @@ function SectionsTab({
                           <div key={sub.id} className="flex items-center gap-2 rounded-xl p-2" style={{ background: "#F6F3EA" }}>
                             <Avatar name={m?.name} photo={m?.photo} color={activity.color} size={30} />
                             <div className="min-w-0 flex-1">
-                              <p className="text-xs font-medium truncate">{m?.name || "عضو محذوف"}</p>
-                              {sub.link && <a href={sub.link} target="_blank" rel="noreferrer" className="text-xs flex items-center gap-1 truncate" style={{ color: "#2C4A6E" }}><Link2 size={11} /> رابط الملف</a>}
+                              <p className="text-xs font-medium truncate">{m?.name || "Ø¹Ø¶Ùˆ Ù…Ø­Ø°ÙˆÙ"}</p>
+                              {sub.link && <a href={sub.link} target="_blank" rel="noreferrer" className="text-xs flex items-center gap-1 truncate" style={{ color: "#2C4A6E" }}><Link2 size={11} /> Ø±Ø§Ø¨Ø· Ø§Ù„Ù…Ù„Ù</a>}
                               {sub.note && <p className="text-xs truncate" style={{ color: "#6B7280" }}>{sub.note}</p>}
                             </div>
                             {sub.image && <img src={sub.image} alt="" className="w-9 h-9 rounded-lg object-cover shrink-0" />}
@@ -1070,8 +1075,8 @@ function SectionsTab({
 
         {isSuperAdmin && (
           <div className="mt-8 pt-5 flex gap-2" style={{ borderTop: "1px solid #E4DCC8" }}>
-            <button onClick={() => onEditActivity(activity)} className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full" style={inputStyle}><Pencil size={12} /> تعديل القسم</button>
-            <button onClick={() => onDeleteActivity(activity)} className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full" style={{ ...inputStyle, color: "#8C3B4A" }}><Trash2 size={12} /> حذف القسم</button>
+            <button onClick={() => onEditActivity(activity)} className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full" style={inputStyle}><Pencil size={12} /> ØªØ¹Ø¯ÙŠÙ„ Ø§Ù„Ù‚Ø³Ù…</button>
+            <button onClick={() => onDeleteActivity(activity)} className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full" style={{ ...inputStyle, color: "#8C3B4A" }}><Trash2 size={12} /> Ø­Ø°Ù Ø§Ù„Ù‚Ø³Ù…</button>
           </div>
         )}
       </div>
@@ -1081,8 +1086,8 @@ function SectionsTab({
   return (
     <>
       <div className="flex items-center justify-between mb-4">
-        <h3 className="font-bold text-lg" style={{ fontFamily: "'Almarai', sans-serif" }}>الأقسام</h3>
-        {isSuperAdmin && <button onClick={onAddActivity} className="flex items-center gap-1.5 text-sm font-medium px-3 py-1.5 rounded-full text-white hover:opacity-90 transition" style={{ background: "#E89D5A" }}><Plus size={15} /> قسم جديد</button>}
+        <h3 className="font-bold text-lg" style={{ fontFamily: "'Almarai', sans-serif" }}>Ø§Ù„Ø£Ù‚Ø³Ø§Ù…</h3>
+        {isSuperAdmin && <button onClick={onAddActivity} className="flex items-center gap-1.5 text-sm font-medium px-3 py-1.5 rounded-full text-white hover:opacity-90 transition" style={{ background: "#E89D5A" }}><Plus size={15} /> Ù‚Ø³Ù… Ø¬Ø¯ÙŠØ¯</button>}
       </div>
 
       {!currentUser && (
@@ -1090,11 +1095,11 @@ function SectionsTab({
           <div className="flex items-center gap-2">
             <UserRound size={18} color="#139299" />
             <div>
-              <p className="font-bold text-sm" style={{ fontFamily: "'Almarai', sans-serif" }}>سجّل دخولك لدخول قسمك</p>
-              <p className="text-xs" style={{ color: "#6B7280" }}>تقدر تدخل قسمك الخاص فقط، وما تقدر تشوف مهام الأقسام الأخرى.</p>
+              <p className="font-bold text-sm" style={{ fontFamily: "'Almarai', sans-serif" }}>Ø³Ø¬Ù‘Ù„ Ø¯Ø®ÙˆÙ„Ùƒ Ù„Ø¯Ø®ÙˆÙ„ Ù‚Ø³Ù…Ùƒ</p>
+              <p className="text-xs" style={{ color: "#6B7280" }}>ØªÙ‚Ø¯Ø± ØªØ¯Ø®Ù„ Ù‚Ø³Ù…Ùƒ Ø§Ù„Ø®Ø§Øµ ÙÙ‚Ø·ØŒ ÙˆÙ…Ø§ ØªÙ‚Ø¯Ø± ØªØ´ÙˆÙ Ù…Ù‡Ø§Ù… Ø§Ù„Ø£Ù‚Ø³Ø§Ù… Ø§Ù„Ø£Ø®Ø±Ù‰.</p>
             </div>
           </div>
-          <button onClick={onRequestLogin} className="text-sm font-medium px-4 py-2 rounded-full text-white shrink-0" style={{ background: "#139299" }}>تسجيل الدخول</button>
+          <button onClick={onRequestLogin} className="text-sm font-medium px-4 py-2 rounded-full text-white shrink-0" style={{ background: "#139299" }}>ØªØ³Ø¬ÙŠÙ„ Ø§Ù„Ø¯Ø®ÙˆÙ„</button>
         </div>
       )}
 
@@ -1103,15 +1108,15 @@ function SectionsTab({
           <div className="flex items-center gap-3">
             <Avatar name={currentUser.name} photo={currentUser.photo} color={data.activities.find((a) => a.id === currentUser.activityId)?.color} size={38} />
             <div>
-              <p className="text-sm font-bold">{currentUser.name} <span className="text-xs font-normal" style={{ color: roleBadgeColor(currentUser) }}>· {roleLabel(currentUser)}</span></p>
-              <p className="text-xs" style={{ color: "#6B7280" }}>{isSuperAdmin ? "صلاحية كاملة على كل الأقسام" : `قسمك: ${memberActivityIds(currentUser).map((id) => data.activities.find((a) => a.id === id)?.name).filter(Boolean).join("، ") || "—"}`}</p>
+              <p className="text-sm font-bold">{currentUser.name} <span className="text-xs font-normal" style={{ color: roleBadgeColor(currentUser) }}>Â· {roleLabel(currentUser)}</span></p>
+              <p className="text-xs" style={{ color: "#6B7280" }}>{isSuperAdmin ? "ØµÙ„Ø§Ø­ÙŠØ© ÙƒØ§Ù…Ù„Ø© Ø¹Ù„Ù‰ ÙƒÙ„ Ø§Ù„Ø£Ù‚Ø³Ø§Ù…" : `Ù‚Ø³Ù…Ùƒ: ${memberActivityIds(currentUser).map((id) => data.activities.find((a) => a.id === id)?.name).filter(Boolean).join("ØŒ ") || "â€”"}`}</p>
             </div>
           </div>
         </div>
       )}
 
       {data.activities.length === 0 ? (
-        <EmptyState icon={<Sparkles size={22} color="#E89D5A" />} title="لا توجد أقسام بعد" subtitle={isSuperAdmin ? "أضف أول قسم ليظهر هنا." : "لم يضف Owner أي قسم حتى الآن."} />
+        <EmptyState icon={<Sparkles size={22} color="#E89D5A" />} title="Ù„Ø§ ØªÙˆØ¬Ø¯ Ø£Ù‚Ø³Ø§Ù… Ø¨Ø¹Ø¯" subtitle={isSuperAdmin ? "Ø£Ø¶Ù Ø£ÙˆÙ„ Ù‚Ø³Ù… Ù„ÙŠØ¸Ù‡Ø± Ù‡Ù†Ø§." : "Ù„Ù… ÙŠØ¶Ù Owner Ø£ÙŠ Ù‚Ø³Ù… Ø­ØªÙ‰ Ø§Ù„Ø¢Ù†."} />
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {data.activities.map((a) => {
@@ -1127,11 +1132,11 @@ function SectionsTab({
                 <div className="flex items-start justify-between">
                   <div className="w-11 h-11 rounded-xl flex items-center justify-center" style={{ background: a.color + "22" }}><Icon size={20} color={a.color} /></div>
                   {!unlocked && <Lock size={15} color="#9CA3AF" />}
-                  {isMine && <span className="text-xs font-medium px-2 py-0.5 rounded-full" style={{ background: a.color + "1F", color: a.color }}>{manage ? "تديره" : "قسمك"}</span>}
+                  {isMine && <span className="text-xs font-medium px-2 py-0.5 rounded-full" style={{ background: a.color + "1F", color: a.color }}>{manage ? "ØªØ¯ÙŠØ±Ù‡" : "Ù‚Ø³Ù…Ùƒ"}</span>}
                 </div>
                 <h4 className="font-bold mt-3" style={{ fontFamily: "'Almarai', sans-serif" }}>{a.name}</h4>
-                <p className="text-xs mt-1 flex items-center gap-1" style={{ color: "#6B7280" }}><Users size={13} /> {count} عضو</p>
-                {unlocked && <span className="mt-3 text-xs font-medium inline-flex items-center gap-1" style={{ color: a.color }}>فتح القسم <ChevronLeft size={13} /></span>}
+                <p className="text-xs mt-1 flex items-center gap-1" style={{ color: "#6B7280" }}><Users size={13} /> {count} Ø¹Ø¶Ùˆ</p>
+                {unlocked && <span className="mt-3 text-xs font-medium inline-flex items-center gap-1" style={{ color: a.color }}>ÙØªØ­ Ø§Ù„Ù‚Ø³Ù… <ChevronLeft size={13} /></span>}
               </button>
             );
           })}
@@ -1141,23 +1146,23 @@ function SectionsTab({
   );
 }
 
-/* ================= MY TASKS (مهماتي) ================= */
+/* ================= MY TASKS (Ù…Ù‡Ù…Ø§ØªÙŠ) ================= */
 function AttendanceStatusBadge({ status, onCheckIn, color }) {
-  if (status === "present") return <span className="text-xs font-medium px-2.5 py-1 rounded-full flex items-center gap-1" style={{ background: "#1392991A", color: "#139299" }}><UserCheck size={13} /> حاضر</span>;
-  if (status === "absent") return <span className="text-xs font-medium px-2.5 py-1 rounded-full flex items-center gap-1" style={{ background: "#8C3B4A1A", color: "#8C3B4A" }}><UserX size={13} /> غائب</span>;
-  if (status === "pending") return <span className="text-xs font-medium px-2.5 py-1 rounded-full" style={{ background: "#E89D5A1A", color: "#E89D5A" }}>بانتظار المراجعة</span>;
-  return <button onClick={onCheckIn} className="text-xs font-medium px-2.5 py-1 rounded-full text-white" style={{ background: color }}>تسجيل حضوري</button>;
+  if (status === "present") return <span className="text-xs font-medium px-2.5 py-1 rounded-full flex items-center gap-1" style={{ background: "#1392991A", color: "#139299" }}><UserCheck size={13} /> Ø­Ø§Ø¶Ø±</span>;
+  if (status === "absent") return <span className="text-xs font-medium px-2.5 py-1 rounded-full flex items-center gap-1" style={{ background: "#8C3B4A1A", color: "#8C3B4A" }}><UserX size={13} /> ØºØ§Ø¦Ø¨</span>;
+  if (status === "pending") return <span className="text-xs font-medium px-2.5 py-1 rounded-full" style={{ background: "#E89D5A1A", color: "#E89D5A" }}>Ø¨Ø§Ù†ØªØ¸Ø§Ø± Ø§Ù„Ù…Ø±Ø§Ø¬Ø¹Ø©</span>;
+  return <button onClick={onCheckIn} className="text-xs font-medium px-2.5 py-1 rounded-full text-white" style={{ background: color }}>ØªØ³Ø¬ÙŠÙ„ Ø­Ø¶ÙˆØ±ÙŠ</button>;
 }
 
 function MyTasksTab({ data, currentUser, onRequestLogin, getSubmission, onOpenSubmission, onCheckIn, onTogglePersonalTask }) {
   if (!currentUser) {
     return (
-      <EmptyState icon={<ListChecks size={22} color="#139299" />} title="سجّل دخولك لعرض مهماتك" subtitle="بعد تسجيل الدخول تظهر لك هنا مهام قسمك مباشرة."
-        action={<button onClick={onRequestLogin} className="mt-3 text-sm font-medium px-4 py-2 rounded-full text-white" style={{ background: "#139299" }}>تسجيل الدخول</button>} />
+      <EmptyState icon={<ListChecks size={22} color="#139299" />} title="Ø³Ø¬Ù‘Ù„ Ø¯Ø®ÙˆÙ„Ùƒ Ù„Ø¹Ø±Ø¶ Ù…Ù‡Ù…Ø§ØªÙƒ" subtitle="Ø¨Ø¹Ø¯ ØªØ³Ø¬ÙŠÙ„ Ø§Ù„Ø¯Ø®ÙˆÙ„ ØªØ¸Ù‡Ø± Ù„Ùƒ Ù‡Ù†Ø§ Ù…Ù‡Ø§Ù… Ù‚Ø³Ù…Ùƒ Ù…Ø¨Ø§Ø´Ø±Ø©."
+        action={<button onClick={onRequestLogin} className="mt-3 text-sm font-medium px-4 py-2 rounded-full text-white" style={{ background: "#139299" }}>ØªØ³Ø¬ÙŠÙ„ Ø§Ù„Ø¯Ø®ÙˆÙ„</button>} />
     );
   }
   if (currentUser.role === "superadmin") {
-    return <EmptyState icon={<ListChecks size={22} color="#8C3B4A" />} title="أنت الـ Owner" subtitle="تقدر تدير مهام كل الأقسام من تبويب الأقسام." />;
+    return <EmptyState icon={<ListChecks size={22} color="#8C3B4A" />} title="Ø£Ù†Øª Ø§Ù„Ù€ Owner" subtitle="ØªÙ‚Ø¯Ø± ØªØ¯ÙŠØ± Ù…Ù‡Ø§Ù… ÙƒÙ„ Ø§Ù„Ø£Ù‚Ø³Ø§Ù… Ù…Ù† ØªØ¨ÙˆÙŠØ¨ Ø§Ù„Ø£Ù‚Ø³Ø§Ù…." />;
   }
 
   const myActivityIds = memberActivityIds(currentUser);
@@ -1168,28 +1173,28 @@ function MyTasksTab({ data, currentUser, onRequestLogin, getSubmission, onOpenSu
     if (!dueDate) return null;
     try { return new Date(dueDate).toLocaleString("ar-SA", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" }); } catch { return dueDate; }
   }
-  function assignerName(id) { return data.members.find((m) => m.id === id)?.name || "—"; }
+  function assignerName(id) { return data.members.find((m) => m.id === id)?.name || "â€”"; }
 
   return (
     <div>
       <div className="flex items-center justify-between flex-wrap gap-3 mb-6">
         <div>
-          <h3 className="font-bold text-lg" style={{ fontFamily: "'Almarai', sans-serif" }}>مهماتي</h3>
-          <p className="text-xs" style={{ color: "#6B7280" }}>{myActivities.length ? myActivities.map((a) => a.name).join("، ") : "لا تنتمي لأي قسم حاليًا"}</p>
+          <h3 className="font-bold text-lg" style={{ fontFamily: "'Almarai', sans-serif" }}>Ù…Ù‡Ù…Ø§ØªÙŠ</h3>
+          <p className="text-xs" style={{ color: "#6B7280" }}>{myActivities.length ? myActivities.map((a) => a.name).join("ØŒ ") : "Ù„Ø§ ØªÙ†ØªÙ…ÙŠ Ù„Ø£ÙŠ Ù‚Ø³Ù… Ø­Ø§Ù„ÙŠÙ‹Ø§"}</p>
         </div>
-        <span className="text-xs font-medium px-2.5 py-1 rounded-full" style={{ background: points < 0 ? "#8C3B4A1A" : "#1392991A", color: points < 0 ? "#8C3B4A" : "#139299" }}>نقاطك: {points}</span>
+        <span className="text-xs font-medium px-2.5 py-1 rounded-full" style={{ background: points < 0 ? "#8C3B4A1A" : "#1392991A", color: points < 0 ? "#8C3B4A" : "#139299" }}>Ù†Ù‚Ø§Ø·Ùƒ: {points}</span>
       </div>
 
       {currentUser.dismissed && (
         <div className="rounded-2xl p-4 mb-6 flex items-center gap-2" style={{ background: "#8C3B4A1A", border: "1px solid #8C3B4A" }}>
           <AlertTriangle size={18} color="#8C3B4A" />
-          <p className="text-sm" style={{ color: "#8C3B4A" }}>عضويتك موقوفة حاليًا بسبب تكرار عدم تسليم المهام. تواصل مع رئيس القسم أو نائبه لإرجاعك.</p>
+          <p className="text-sm" style={{ color: "#8C3B4A" }}>Ø¹Ø¶ÙˆÙŠØªÙƒ Ù…ÙˆÙ‚ÙˆÙØ© Ø­Ø§Ù„ÙŠÙ‹Ø§ Ø¨Ø³Ø¨Ø¨ ØªÙƒØ±Ø§Ø± Ø¹Ø¯Ù… ØªØ³Ù„ÙŠÙ… Ø§Ù„Ù…Ù‡Ø§Ù…. ØªÙˆØ§ØµÙ„ Ù…Ø¹ Ø±Ø¦ÙŠØ³ Ø§Ù„Ù‚Ø³Ù… Ø£Ùˆ Ù†Ø§Ø¦Ø¨Ù‡ Ù„Ø¥Ø±Ø¬Ø§Ø¹Ùƒ.</p>
         </div>
       )}
 
       {myPersonalTasks.length > 0 && (
         <div className="mb-8">
-          <p className="font-bold text-sm mb-3" style={{ fontFamily: "'Almarai', sans-serif" }}>مهامي الشخصية</p>
+          <p className="font-bold text-sm mb-3" style={{ fontFamily: "'Almarai', sans-serif" }}>Ù…Ù‡Ø§Ù…ÙŠ Ø§Ù„Ø´Ø®ØµÙŠØ©</p>
           <div className="space-y-3">
             {myPersonalTasks.map((t) => (
               <button key={t.id} onClick={() => onTogglePersonalTask(t.id)} className="w-full flex items-start gap-3 rounded-2xl p-4 bg-white card-hover text-right" style={{ border: "1px solid #E4DCC8" }}>
@@ -1198,7 +1203,7 @@ function MyTasksTab({ data, currentUser, onRequestLogin, getSubmission, onOpenSu
                   <p className="font-bold" style={{ fontFamily: "'Almarai', sans-serif", textDecoration: t.completed ? "line-through" : "none", opacity: t.completed ? 0.6 : 1 }}>{t.title}</p>
                   {t.description && <p className="text-sm mt-1" style={{ color: "#6B7280" }}>{t.description}</p>}
                   <p className="text-xs mt-1.5" style={{ color: "#6B7280" }}>
-                    من: {assignerName(t.assignedBy)}{t.dueDate ? ` · الموعد: ${formatDue(t.dueDate)}` : ""}
+                    Ù…Ù†: {assignerName(t.assignedBy)}{t.dueDate ? ` Â· Ø§Ù„Ù…ÙˆØ¹Ø¯: ${formatDue(t.dueDate)}` : ""}
                   </p>
                 </div>
               </button>
@@ -1208,12 +1213,11 @@ function MyTasksTab({ data, currentUser, onRequestLogin, getSubmission, onOpenSu
       )}
 
       {myActivities.length === 0 ? (
-        <EmptyState icon={<ListChecks size={22} color="#139299" />} title="لا تنتمي لأي قسم حاليًا" subtitle="تواصل مع Owner لإضافتك لقسم." />
+        <EmptyState icon={<ListChecks size={22} color="#139299" />} title="Ù„Ø§ ØªÙ†ØªÙ…ÙŠ Ù„Ø£ÙŠ Ù‚Ø³Ù… Ø­Ø§Ù„ÙŠÙ‹Ø§" subtitle="ØªÙˆØ§ØµÙ„ Ù…Ø¹ Owner Ù„Ø¥Ø¶Ø§ÙØªÙƒ Ù„Ù‚Ø³Ù…." />
       ) : (
         myActivities.map((activity) => {
           const Icon = ICONS[activity.icon] || Sparkles;
           const tasks = data.tasks.filter((t) => t.activityId === activity.id).filter((t) => {
-            if (t.type !== "attendance") return true;
             if (!Array.isArray(t.assignedMemberIds) || t.assignedMemberIds.length === 0) return true;
             return t.assignedMemberIds.includes(currentUser.id);
           });
@@ -1226,7 +1230,7 @@ function MyTasksTab({ data, currentUser, onRequestLogin, getSubmission, onOpenSu
                 </div>
               )}
               {tasks.length === 0 ? (
-                <EmptyState icon={<ListChecks size={22} color={activity.color} />} title="لا توجد مهام حاليًا" subtitle="راجع الصفحة لاحقًا، سيتم إضافة المهام هنا فور نشرها." />
+                <EmptyState icon={<ListChecks size={22} color={activity.color} />} title="Ù„Ø§ ØªÙˆØ¬Ø¯ Ù…Ù‡Ø§Ù… Ø­Ø§Ù„ÙŠÙ‹Ø§" subtitle="Ø±Ø§Ø¬Ø¹ Ø§Ù„ØµÙØ­Ø© Ù„Ø§Ø­Ù‚Ù‹Ø§ØŒ Ø³ÙŠØªÙ… Ø¥Ø¶Ø§ÙØ© Ø§Ù„Ù…Ù‡Ø§Ù… Ù‡Ù†Ø§ ÙÙˆØ± Ù†Ø´Ø±Ù‡Ø§." />
               ) : (
                 <div className="space-y-3">
                   {tasks.map((t) => {
@@ -1237,15 +1241,15 @@ function MyTasksTab({ data, currentUser, onRequestLogin, getSubmission, onOpenSu
                         <div>
                           <p className="font-bold" style={{ fontFamily: "'Almarai', sans-serif" }}>{t.title}</p>
                           {t.description && <p className="text-sm mt-1" style={{ color: "#6B7280" }}>{t.description}</p>}
-                          {t.dueDate && <p className="text-xs mt-1.5 font-medium" style={{ color: overdue ? "#8C3B4A" : "#6B7280" }}>{overdue ? "انتهى الموعد: " : "آخر موعد: "}{formatDue(t.dueDate)}</p>}
-                          {mine?.note && <p className="text-xs mt-2" style={{ color: "#6B7280" }}>ملاحظتك: {mine.note}</p>}
+                          {t.dueDate && <p className="text-xs mt-1.5 font-medium" style={{ color: overdue ? "#8C3B4A" : "#6B7280" }}>{overdue ? "Ø§Ù†ØªÙ‡Ù‰ Ø§Ù„Ù…ÙˆØ¹Ø¯: " : "Ø¢Ø®Ø± Ù…ÙˆØ¹Ø¯: "}{formatDue(t.dueDate)}</p>}
+                          {mine?.note && <p className="text-xs mt-2" style={{ color: "#6B7280" }}>Ù…Ù„Ø§Ø­Ø¸ØªÙƒ: {mine.note}</p>}
                         </div>
                         {!currentUser.dismissed && (
                           activity.type === "attendance"
                             ? <AttendanceStatusBadge status={mine?.status} onCheckIn={() => onCheckIn(t.id)} color={activity.color} />
                             : (mine
-                              ? <button onClick={() => onOpenSubmission(t.id)} className="text-xs font-medium px-2.5 py-1 rounded-full shrink-0" style={{ background: "#1392991A", color: "#139299" }}>تم التسليم · تعديل</button>
-                              : <button onClick={() => onOpenSubmission(t.id)} className="text-xs font-medium px-2.5 py-1 rounded-full text-white shrink-0" style={{ background: activity.color }}>تسليم</button>)
+                              ? <button onClick={() => onOpenSubmission(t.id)} className="text-xs font-medium px-2.5 py-1 rounded-full shrink-0" style={{ background: "#1392991A", color: "#139299" }}>ØªÙ… Ø§Ù„ØªØ³Ù„ÙŠÙ… Â· ØªØ¹Ø¯ÙŠÙ„</button>
+                              : <button onClick={() => onOpenSubmission(t.id)} className="text-xs font-medium px-2.5 py-1 rounded-full text-white shrink-0" style={{ background: activity.color }}>ØªØ³Ù„ÙŠÙ…</button>)
                         )}
                       </div>
                     );
@@ -1266,19 +1270,19 @@ function GalleryTab({ data, canManageSite, onAddPhoto, onDeletePhoto }) {
   return (
     <>
       <div className="flex items-center justify-between mb-4">
-        <h3 className="font-bold text-lg" style={{ fontFamily: "'Almarai', sans-serif" }}>صور الإذاعة</h3>
-        {canManageSite && <button onClick={onAddPhoto} className="flex items-center gap-1.5 text-sm font-medium px-3 py-1.5 rounded-full text-white hover:opacity-90 transition" style={{ background: "#139299" }}><Plus size={15} /> إضافة صورة</button>}
+        <h3 className="font-bold text-lg" style={{ fontFamily: "'Almarai', sans-serif" }}>ØµÙˆØ± Ø§Ù„Ø¥Ø°Ø§Ø¹Ø©</h3>
+        {canManageSite && <button onClick={onAddPhoto} className="flex items-center gap-1.5 text-sm font-medium px-3 py-1.5 rounded-full text-white hover:opacity-90 transition" style={{ background: "#139299" }}><Plus size={15} /> Ø¥Ø¶Ø§ÙØ© ØµÙˆØ±Ø©</button>}
       </div>
       {data.photos.length === 0 ? (
-        <EmptyState icon={<ImageIcon size={22} color="#139299" />} title="لا توجد صور بعد" subtitle={canManageSite ? "أضف أول صورة من الإذاعة الصباحية." : "سيتم نشر صور الإذاعة هنا قريبًا."}
-          action={canManageSite && <button onClick={onAddPhoto} className="mt-3 text-sm font-medium px-4 py-2 rounded-full text-white" style={{ background: "#139299" }}>إضافة صورة</button>} />
+        <EmptyState icon={<ImageIcon size={22} color="#139299" />} title="Ù„Ø§ ØªÙˆØ¬Ø¯ ØµÙˆØ± Ø¨Ø¹Ø¯" subtitle={canManageSite ? "Ø£Ø¶Ù Ø£ÙˆÙ„ ØµÙˆØ±Ø© Ù…Ù† Ø§Ù„Ø¥Ø°Ø§Ø¹Ø© Ø§Ù„ØµØ¨Ø§Ø­ÙŠØ©." : "Ø³ÙŠØªÙ… Ù†Ø´Ø± ØµÙˆØ± Ø§Ù„Ø¥Ø°Ø§Ø¹Ø© Ù‡Ù†Ø§ Ù‚Ø±ÙŠØ¨Ù‹Ø§."}
+          action={canManageSite && <button onClick={onAddPhoto} className="mt-3 text-sm font-medium px-4 py-2 rounded-full text-white" style={{ background: "#139299" }}>Ø¥Ø¶Ø§ÙØ© ØµÙˆØ±Ø©</button>} />
       ) : (
         <>
           <AutoCarousel items={carouselItems} />
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {data.photos.map((p) => (
               <div key={p.id} className="relative rounded-2xl overflow-hidden bg-white card-hover" style={{ border: "1px solid #E4DCC8" }}>
-                <div className="w-full h-32 flex items-center justify-center" style={{ background: "#F0EBDD" }}><img src={p.image} alt={p.caption || "صورة الإذاعة"} className="w-full h-full object-contain" /></div>
+                <div className="w-full h-32 flex items-center justify-center" style={{ background: "#F0EBDD" }}><img src={p.image} alt={p.caption || "ØµÙˆØ±Ø© Ø§Ù„Ø¥Ø°Ø§Ø¹Ø©"} className="w-full h-full object-contain" /></div>
                 {(p.caption || p.date) && <div className="p-2.5">{p.caption && <p className="text-sm font-medium truncate">{p.caption}</p>}{p.date && <p className="text-xs" style={{ color: "#6B7280" }}>{p.date}</p>}</div>}
                 {canManageSite && <button onClick={() => onDeletePhoto(p)} className="absolute top-2 left-2 p-1.5 rounded-full bg-white/85 hover:bg-white"><Trash2 size={13} color="#8C3B4A" /></button>}
               </div>
@@ -1297,19 +1301,19 @@ function StudentsTab({ data, currentUser, isSuperAdmin, isLeader, filter, setFil
   return (
     <>
       <div className="flex items-center justify-between mb-4 flex-wrap gap-3">
-        <h3 className="font-bold text-lg" style={{ fontFamily: "'Almarai', sans-serif" }}>أسماء الطلاب</h3>
+        <h3 className="font-bold text-lg" style={{ fontFamily: "'Almarai', sans-serif" }}>Ø£Ø³Ù…Ø§Ø¡ Ø§Ù„Ø·Ù„Ø§Ø¨</h3>
         <div className="flex items-center gap-2">
           <div className="relative">
             <Search size={14} className="absolute top-1/2 -translate-y-1/2 right-3" color="#9CA3AF" />
-            <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="ابحث بالاسم أو الفصل" className="text-sm pr-8 pl-3 py-2 rounded-full bg-white" style={{ ...inputStyle, minWidth: 180 }} />
+            <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Ø§Ø¨Ø­Ø« Ø¨Ø§Ù„Ø§Ø³Ù… Ø£Ùˆ Ø§Ù„ÙØµÙ„" className="text-sm pr-8 pl-3 py-2 rounded-full bg-white" style={{ ...inputStyle, minWidth: 180 }} />
           </div>
-          {canAdd && data.activities.length > 0 && <button onClick={onAddMember} className="flex items-center gap-1.5 text-sm font-medium px-3 py-1.5 rounded-full text-white hover:opacity-90 transition whitespace-nowrap" style={{ background: "#139299" }}><Plus size={15} /> عضو جديد</button>}
+          {canAdd && data.activities.length > 0 && <button onClick={onAddMember} className="flex items-center gap-1.5 text-sm font-medium px-3 py-1.5 rounded-full text-white hover:opacity-90 transition whitespace-nowrap" style={{ background: "#139299" }}><Plus size={15} /> Ø¹Ø¶Ùˆ Ø¬Ø¯ÙŠØ¯</button>}
         </div>
       </div>
 
       {data.activities.length > 0 && (
         <div className="flex gap-2 flex-wrap mb-6">
-          <FilterChip label="الكل" active={filter === "all"} onClick={() => setFilter("all")} />
+          <FilterChip label="Ø§Ù„ÙƒÙ„" active={filter === "all"} onClick={() => setFilter("all")} />
           {data.activities.map((a) => {
             const count = data.members.filter((m) => belongsToActivity(m, a.id)).length;
             return <FilterChip key={a.id} label={`${a.name} (${count})`} color={a.color} active={filter === a.id} onClick={() => setFilter(a.id)} />;
@@ -1318,7 +1322,7 @@ function StudentsTab({ data, currentUser, isSuperAdmin, isLeader, filter, setFil
       )}
 
       {filteredMembers.length === 0 ? (
-        <EmptyState icon={<Users size={22} color="#139299" />} title="لا يوجد أعضاء مطابقون" subtitle={canAdd ? "أضف عضوًا جديدًا أو غيّر الفلتر." : "جرّب تغيير القسم أو كلمة البحث."} />
+        <EmptyState icon={<Users size={22} color="#139299" />} title="Ù„Ø§ ÙŠÙˆØ¬Ø¯ Ø£Ø¹Ø¶Ø§Ø¡ Ù…Ø·Ø§Ø¨Ù‚ÙˆÙ†" subtitle={canAdd ? "Ø£Ø¶Ù Ø¹Ø¶ÙˆÙ‹Ø§ Ø¬Ø¯ÙŠØ¯Ù‹Ø§ Ø£Ùˆ ØºÙŠÙ‘Ø± Ø§Ù„ÙÙ„ØªØ±." : "Ø¬Ø±Ù‘Ø¨ ØªØºÙŠÙŠØ± Ø§Ù„Ù‚Ø³Ù… Ø£Ùˆ ÙƒÙ„Ù…Ø© Ø§Ù„Ø¨Ø­Ø«."} />
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {filteredMembers.map((m) => {
@@ -1342,16 +1346,16 @@ function StudentsTab({ data, currentUser, isSuperAdmin, isLeader, filter, setFil
 
                 <div className="flex flex-wrap gap-1.5 mt-3">
                   {myActs.map((a) => <span key={a.id} className="inline-flex items-center gap-1 text-xs font-medium px-2 py-1 rounded-full" style={{ background: a.color + "1F", color: a.color }}>{a.name}</span>)}
-                  {isMember && <span className="inline-flex items-center gap-1 text-xs font-medium px-2 py-1 rounded-full" style={{ background: points < 0 ? "#8C3B4A1A" : "#1392991A", color: points < 0 ? "#8C3B4A" : "#139299" }}>النقاط: {points}</span>}
-                  {m.dismissed && <span className="inline-flex items-center gap-1 text-xs font-bold px-2 py-1 rounded-full text-white" style={{ background: "#8C3B4A" }}>مطرود</span>}
-                  {!m.dismissed && warnLevel === 1 && <span className="inline-flex items-center gap-1 text-xs font-medium px-2 py-1 rounded-full text-white" style={{ background: "#E89D5A" }}>إنذار أول</span>}
-                  {!m.dismissed && warnLevel === 2 && <span className="inline-flex items-center gap-1 text-xs font-medium px-2 py-1 rounded-full text-white" style={{ background: "#A85C32" }}>إنذار ثانٍ</span>}
+                  {isMember && <span className="inline-flex items-center gap-1 text-xs font-medium px-2 py-1 rounded-full" style={{ background: points < 0 ? "#8C3B4A1A" : "#1392991A", color: points < 0 ? "#8C3B4A" : "#139299" }}>Ø§Ù„Ù†Ù‚Ø§Ø·: {points}</span>}
+                  {m.dismissed && <span className="inline-flex items-center gap-1 text-xs font-bold px-2 py-1 rounded-full text-white" style={{ background: "#8C3B4A" }}>Ù…Ø·Ø±ÙˆØ¯</span>}
+                  {!m.dismissed && warnLevel === 1 && <span className="inline-flex items-center gap-1 text-xs font-medium px-2 py-1 rounded-full text-white" style={{ background: "#E89D5A" }}>Ø¥Ù†Ø°Ø§Ø± Ø£ÙˆÙ„</span>}
+                  {!m.dismissed && warnLevel === 2 && <span className="inline-flex items-center gap-1 text-xs font-medium px-2 py-1 rounded-full text-white" style={{ background: "#A85C32" }}>Ø¥Ù†Ø°Ø§Ø± Ø«Ø§Ù†Ù</span>}
                 </div>
 
                 <div className="flex flex-wrap gap-1.5 mt-2">
-                  {isMember && canAddBonusPoints(m) && <button onClick={() => onAddPoints(m)} className="text-xs font-medium px-2.5 py-1 rounded-full" style={inputStyle}>+ نقاط</button>}
-                  {m.dismissed && canReinstate(m) && <button onClick={() => onReinstate(m)} className="text-xs font-medium px-2.5 py-1 rounded-full text-white" style={{ background: "#139299" }}>إرجاع العضو</button>}
-                  {canAssignPersonalTask(m) && <button onClick={() => onAssignPersonalTask(m)} className="text-xs font-medium px-2.5 py-1 rounded-full" style={inputStyle}>مهمة شخصية</button>}
+                  {isMember && canAddBonusPoints(m) && <button onClick={() => onAddPoints(m)} className="text-xs font-medium px-2.5 py-1 rounded-full" style={inputStyle}>+ Ù†Ù‚Ø§Ø·</button>}
+                  {m.dismissed && canReinstate(m) && <button onClick={() => onReinstate(m)} className="text-xs font-medium px-2.5 py-1 rounded-full text-white" style={{ background: "#139299" }}>Ø¥Ø±Ø¬Ø§Ø¹ Ø§Ù„Ø¹Ø¶Ùˆ</button>}
+                  {canAssignPersonalTask(m) && <button onClick={() => onAssignPersonalTask(m)} className="text-xs font-medium px-2.5 py-1 rounded-full" style={inputStyle}>Ù…Ù‡Ù…Ø© Ø´Ø®ØµÙŠØ©</button>}
                 </div>
 
                 {canEdit(m) && (
@@ -1372,12 +1376,12 @@ function StudentsTab({ data, currentUser, isSuperAdmin, isLeader, filter, setFil
 /* ================= TOP STUDENTS ================= */
 function TopTab({ ranking, activityById: getAct }) {
   if (ranking.length === 0) {
-    return <EmptyState icon={<Award size={22} color="#E89D5A" />} title="لا يوجد ترتيب بعد" subtitle="يظهر هنا الأعضاء تلقائيًا حسب عدد المهام المسلَّمة، بمجرد أن يبدأ الأعضاء بتسليم مهامهم." />;
+    return <EmptyState icon={<Award size={22} color="#E89D5A" />} title="Ù„Ø§ ÙŠÙˆØ¬Ø¯ ØªØ±ØªÙŠØ¨ Ø¨Ø¹Ø¯" subtitle="ÙŠØ¸Ù‡Ø± Ù‡Ù†Ø§ Ø§Ù„Ø£Ø¹Ø¶Ø§Ø¡ ØªÙ„Ù‚Ø§Ø¦ÙŠÙ‹Ø§ Ø­Ø³Ø¨ Ø¹Ø¯Ø¯ Ø§Ù„Ù…Ù‡Ø§Ù… Ø§Ù„Ù…Ø³Ù„ÙŽÙ‘Ù…Ø©ØŒ Ø¨Ù…Ø¬Ø±Ø¯ Ø£Ù† ÙŠØ¨Ø¯Ø£ Ø§Ù„Ø£Ø¹Ø¶Ø§Ø¡ Ø¨ØªØ³Ù„ÙŠÙ… Ù…Ù‡Ø§Ù…Ù‡Ù…." />;
   }
   const rankColor = (i) => (i === 0 ? "#E89D5A" : i === 1 ? "#8C97A6" : i === 2 ? "#A85C32" : "#139299");
   return (
     <div>
-      <p className="text-sm mb-6" style={{ color: "#6B7280" }}>الترتيب يُحسب تلقائيًا حسب عدد المهام التي سلّمها كل عضو.</p>
+      <p className="text-sm mb-6" style={{ color: "#6B7280" }}>Ø§Ù„ØªØ±ØªÙŠØ¨ ÙŠÙØ­Ø³Ø¨ ØªÙ„Ù‚Ø§Ø¦ÙŠÙ‹Ø§ Ø­Ø³Ø¨ Ø¹Ø¯Ø¯ Ø§Ù„Ù…Ù‡Ø§Ù… Ø§Ù„ØªÙŠ Ø³Ù„Ù‘Ù…Ù‡Ø§ ÙƒÙ„ Ø¹Ø¶Ùˆ.</p>
       <div className="space-y-3">
         {ranking.map((m, i) => {
           const act = getAct(m.activityId);
@@ -1391,7 +1395,7 @@ function TopTab({ ranking, activityById: getAct }) {
               </div>
               <div className="text-left shrink-0">
                 <p className="font-extrabold" style={{ fontFamily: "'Almarai', sans-serif", color: "#139299" }}>{m.count}</p>
-                <p className="text-xs" style={{ color: "#6B7280" }}>مهمة مسلَّمة</p>
+                <p className="text-xs" style={{ color: "#6B7280" }}>Ù…Ù‡Ù…Ø© Ù…Ø³Ù„ÙŽÙ‘Ù…Ø©</p>
               </div>
             </div>
           );
@@ -1408,21 +1412,21 @@ function LoginForm({ members, onCancel, onLogin }) {
   const [error, setError] = useState("");
   function submit() {
     const match = members.find((m) => m.name.trim() === name.trim() && (m.phone || "").trim() === phone.trim() && phone.trim() !== "");
-    if (!match) { setError("الاسم أو رقم الهاتف غير صحيح"); return; }
+    if (!match) { setError("Ø§Ù„Ø§Ø³Ù… Ø£Ùˆ Ø±Ù‚Ù… Ø§Ù„Ù‡Ø§ØªÙ ØºÙŠØ± ØµØ­ÙŠØ­"); return; }
     onLogin(match.id);
   }
   return (
-    <Modal title="تسجيل الدخول" onClose={onCancel}>
-      <Field label="الاسم">
-        <input list="members-names" value={name} onChange={(e) => setName(e.target.value)} placeholder="اكتب اسمك كما هو مسجّل" className="w-full px-3 py-2.5 rounded-lg text-sm" style={inputStyle} autoFocus />
+    <Modal title="ØªØ³Ø¬ÙŠÙ„ Ø§Ù„Ø¯Ø®ÙˆÙ„" onClose={onCancel}>
+      <Field label="Ø§Ù„Ø§Ø³Ù…">
+        <input list="members-names" value={name} onChange={(e) => setName(e.target.value)} placeholder="Ø§ÙƒØªØ¨ Ø§Ø³Ù…Ùƒ ÙƒÙ…Ø§ Ù‡Ùˆ Ù…Ø³Ø¬Ù‘Ù„" className="w-full px-3 py-2.5 rounded-lg text-sm" style={inputStyle} autoFocus />
         <datalist id="members-names">{members.map((m) => <option key={m.id} value={m.name} />)}</datalist>
       </Field>
-      <Field label="رقم الهاتف">
+      <Field label="Ø±Ù‚Ù… Ø§Ù„Ù‡Ø§ØªÙ">
         <input type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} onKeyDown={(e) => e.key === "Enter" && submit()} placeholder="05xxxxxxxx" className="w-full px-3 py-2.5 rounded-lg text-sm" style={inputStyle} />
       </Field>
       {error && <p className="text-xs mb-2" style={{ color: "#8C3B4A" }}>{error}</p>}
-      <button onClick={submit} className="w-full mt-2 py-2.5 rounded-lg text-white font-medium text-sm" style={{ background: "#139299" }}>دخول</button>
-      <p className="text-xs mt-3 text-center" style={{ color: "#6B7280" }}>ما عندك حساب؟ تواصل مع رئيس قسمك أو Owner لإضافتك.</p>
+      <button onClick={submit} className="w-full mt-2 py-2.5 rounded-lg text-white font-medium text-sm" style={{ background: "#139299" }}>Ø¯Ø®ÙˆÙ„</button>
+      <p className="text-xs mt-3 text-center" style={{ color: "#6B7280" }}>Ù…Ø§ Ø¹Ù†Ø¯Ùƒ Ø­Ø³Ø§Ø¨ØŸ ØªÙˆØ§ØµÙ„ Ù…Ø¹ Ø±Ø¦ÙŠØ³ Ù‚Ø³Ù…Ùƒ Ø£Ùˆ Owner Ù„Ø¥Ø¶Ø§ÙØªÙƒ.</p>
     </Modal>
   );
 }
@@ -1434,24 +1438,24 @@ function ActivityForm({ initial, onCancel, onSave }) {
   const [color, setColor] = useState(initial?.color || COLORS[0].value);
   const [type, setType] = useState(initial?.type || "submission");
   const [error, setError] = useState("");
-  function submit() { if (!name.trim()) { setError("اكتب اسم القسم"); return; } onSave({ id: initial?.id, name: name.trim(), icon, color, type }); }
+  function submit() { if (!name.trim()) { setError("Ø§ÙƒØªØ¨ Ø§Ø³Ù… Ø§Ù„Ù‚Ø³Ù…"); return; } onSave({ id: initial?.id, name: name.trim(), icon, color, type }); }
   return (
-    <Modal title={initial ? "تعديل القسم" : "قسم جديد"} onClose={onCancel}>
-      <Field label="اسم القسم"><input value={name} onChange={(e) => setName(e.target.value)} placeholder="مثال: نادي الروبوتات" className="w-full px-3 py-2.5 rounded-lg text-sm" style={inputStyle} autoFocus /></Field>
-      <Field label="نظام القسم">
+    <Modal title={initial ? "ØªØ¹Ø¯ÙŠÙ„ Ø§Ù„Ù‚Ø³Ù…" : "Ù‚Ø³Ù… Ø¬Ø¯ÙŠØ¯"} onClose={onCancel}>
+      <Field label="Ø§Ø³Ù… Ø§Ù„Ù‚Ø³Ù…"><input value={name} onChange={(e) => setName(e.target.value)} placeholder="Ù…Ø«Ø§Ù„: Ù†Ø§Ø¯ÙŠ Ø§Ù„Ø±ÙˆØ¨ÙˆØªØ§Øª" className="w-full px-3 py-2.5 rounded-lg text-sm" style={inputStyle} autoFocus /></Field>
+      <Field label="Ù†Ø¸Ø§Ù… Ø§Ù„Ù‚Ø³Ù…">
         <select value={type} onChange={(e) => setType(e.target.value)} className="w-full px-3 py-2.5 rounded-lg text-sm bg-white" style={inputStyle}>
-          <option value="submission">تسليم مهام (ملفات/روابط)</option>
-          <option value="attendance">حضور وغياب</option>
+          <option value="submission">ØªØ³Ù„ÙŠÙ… Ù…Ù‡Ø§Ù… (Ù…Ù„ÙØ§Øª/Ø±ÙˆØ§Ø¨Ø·)</option>
+          <option value="attendance">Ø­Ø¶ÙˆØ± ÙˆØºÙŠØ§Ø¨</option>
         </select>
       </Field>
-      <Field label="الأيقونة">
+      <Field label="Ø§Ù„Ø£ÙŠÙ‚ÙˆÙ†Ø©">
         <div className="flex flex-wrap gap-2">
           {ICON_KEYS.map((key) => { const Ico = ICONS[key]; return (
             <button key={key} onClick={() => setIcon(key)} className="w-9 h-9 rounded-lg flex items-center justify-center" style={icon === key ? { background: color, color: "white" } : { background: "#F6F3EA", color: "#6B7280" }}><Ico size={16} /></button>
           ); })}
         </div>
       </Field>
-      <Field label="اللون">
+      <Field label="Ø§Ù„Ù„ÙˆÙ†">
         <div className="flex flex-wrap gap-2">
           {COLORS.map((c) => (
             <button key={c.value} onClick={() => setColor(c.value)} className="w-8 h-8 rounded-full flex items-center justify-center" style={{ background: c.value }} title={c.name}>{color === c.value && <Check size={14} color="white" />}</button>
@@ -1459,7 +1463,7 @@ function ActivityForm({ initial, onCancel, onSave }) {
         </div>
       </Field>
       {error && <p className="text-xs mb-2" style={{ color: "#8C3B4A" }}>{error}</p>}
-      <button onClick={submit} className="w-full mt-2 py-2.5 rounded-lg text-white font-medium text-sm" style={{ background: "#139299" }}>حفظ القسم</button>
+      <button onClick={submit} className="w-full mt-2 py-2.5 rounded-lg text-white font-medium text-sm" style={{ background: "#139299" }}>Ø­ÙØ¸ Ø§Ù„Ù‚Ø³Ù…</button>
     </Modal>
   );
 }
@@ -1480,12 +1484,12 @@ function MemberForm({ initial, activities, currentUser, isSuperAdmin, defaultAct
     setActivityIds((prev) => (prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]));
   }
 
-  async function handlePhoto(e) { const file = e.target.files?.[0]; if (!file) return; try { setPhoto(await compressAvatar(file)); } catch { setError("تعذر معالجة الصورة، جرّب صورة أخرى"); } }
+  async function handlePhoto(e) { const file = e.target.files?.[0]; if (!file) return; try { setPhoto(await compressAvatar(file)); } catch { setError("ØªØ¹Ø°Ø± Ù…Ø¹Ø§Ù„Ø¬Ø© Ø§Ù„ØµÙˆØ±Ø©ØŒ Ø¬Ø±Ù‘Ø¨ ØµÙˆØ±Ø© Ø£Ø®Ø±Ù‰"); } }
   function submit() {
-    if (!name.trim()) { setError("اكتب الاسم"); return; }
-    if (!phone.trim()) { setError("اكتب رقم الهاتف (يُستخدم لتسجيل الدخول)"); return; }
-    if (role === "leader" && activityIds.length === 0) { setError("اختر قسمًا واحدًا على الأقل"); return; }
-    if (role === "member" && !activityId) { setError("اختر القسم"); return; }
+    if (!name.trim()) { setError("Ø§ÙƒØªØ¨ Ø§Ù„Ø§Ø³Ù…"); return; }
+    if (!phone.trim()) { setError("Ø§ÙƒØªØ¨ Ø±Ù‚Ù… Ø§Ù„Ù‡Ø§ØªÙ (ÙŠÙØ³ØªØ®Ø¯Ù… Ù„ØªØ³Ø¬ÙŠÙ„ Ø§Ù„Ø¯Ø®ÙˆÙ„)"); return; }
+    if (role === "leader" && activityIds.length === 0) { setError("Ø§Ø®ØªØ± Ù‚Ø³Ù…Ù‹Ø§ ÙˆØ§Ø­Ø¯Ù‹Ø§ Ø¹Ù„Ù‰ Ø§Ù„Ø£Ù‚Ù„"); return; }
+    if (role === "member" && !activityId) { setError("Ø§Ø®ØªØ± Ø§Ù„Ù‚Ø³Ù…"); return; }
     onSave({
       id: initial?.id, name: name.trim(), phone: phone.trim(), role,
       leaderTitle: role === "leader" ? leaderTitle : undefined,
@@ -1498,38 +1502,38 @@ function MemberForm({ initial, activities, currentUser, isSuperAdmin, defaultAct
   const activityName = activities.find((a) => a.id === activityId)?.name;
 
   return (
-    <Modal title={initial ? "تعديل بيانات العضو" : "عضو جديد"} onClose={onCancel}>
+    <Modal title={initial ? "ØªØ¹Ø¯ÙŠÙ„ Ø¨ÙŠØ§Ù†Ø§Øª Ø§Ù„Ø¹Ø¶Ùˆ" : "Ø¹Ø¶Ùˆ Ø¬Ø¯ÙŠØ¯"} onClose={onCancel}>
       <div className="flex items-center gap-3 mb-4">
         <Avatar name={name} photo={photo} size={56} />
         <div>
           <input ref={fileRef} type="file" accept="image/*" onChange={handlePhoto} className="hidden" />
-          <button onClick={() => fileRef.current?.click()} className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full" style={inputStyle}><Upload size={13} /> {photo ? "تغيير الصورة" : "إرفاق صورة"}</button>
-          {photo && <button onClick={() => setPhoto("")} className="text-xs mt-1 block" style={{ color: "#8C3B4A" }}>إزالة الصورة</button>}
+          <button onClick={() => fileRef.current?.click()} className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full" style={inputStyle}><Upload size={13} /> {photo ? "ØªØºÙŠÙŠØ± Ø§Ù„ØµÙˆØ±Ø©" : "Ø¥Ø±ÙØ§Ù‚ ØµÙˆØ±Ø©"}</button>
+          {photo && <button onClick={() => setPhoto("")} className="text-xs mt-1 block" style={{ color: "#8C3B4A" }}>Ø¥Ø²Ø§Ù„Ø© Ø§Ù„ØµÙˆØ±Ø©</button>}
         </div>
       </div>
-      <Field label="الاسم"><input value={name} onChange={(e) => setName(e.target.value)} placeholder="مثال: عبدالله محمد" className="w-full px-3 py-2.5 rounded-lg text-sm" style={inputStyle} autoFocus /></Field>
-      <Field label="رقم الهاتف (لتسجيل الدخول)"><input type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="05xxxxxxxx" className="w-full px-3 py-2.5 rounded-lg text-sm" style={inputStyle} /></Field>
+      <Field label="Ø§Ù„Ø§Ø³Ù…"><input value={name} onChange={(e) => setName(e.target.value)} placeholder="Ù…Ø«Ø§Ù„: Ø¹Ø¨Ø¯Ø§Ù„Ù„Ù‡ Ù…Ø­Ù…Ø¯" className="w-full px-3 py-2.5 rounded-lg text-sm" style={inputStyle} autoFocus /></Field>
+      <Field label="Ø±Ù‚Ù… Ø§Ù„Ù‡Ø§ØªÙ (Ù„ØªØ³Ø¬ÙŠÙ„ Ø§Ù„Ø¯Ø®ÙˆÙ„)"><input type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="05xxxxxxxx" className="w-full px-3 py-2.5 rounded-lg text-sm" style={inputStyle} /></Field>
 
       {isSuperAdmin && (
-        <Field label="الصلاحية">
+        <Field label="Ø§Ù„ØµÙ„Ø§Ø­ÙŠØ©">
           <select value={role} onChange={(e) => setRole(e.target.value)} className="w-full px-3 py-2.5 rounded-lg text-sm bg-white" style={inputStyle}>
-            <option value="member">عضو</option>
-            <option value="leader">رئيس / نائب قسم</option>
+            <option value="member">Ø¹Ø¶Ùˆ</option>
+            <option value="leader">Ø±Ø¦ÙŠØ³ / Ù†Ø§Ø¦Ø¨ Ù‚Ø³Ù…</option>
             <option value="superadmin">Owner</option>
           </select>
         </Field>
       )}
       {isSuperAdmin && role === "leader" && (
-        <Field label="المسمى">
+        <Field label="Ø§Ù„Ù…Ø³Ù…Ù‰">
           <select value={leaderTitle} onChange={(e) => setLeaderTitle(e.target.value)} className="w-full px-3 py-2.5 rounded-lg text-sm bg-white" style={inputStyle}>
-            <option value="head">رئيس القسم</option>
-            <option value="deputy">نائب رئيس القسم</option>
+            <option value="head">Ø±Ø¦ÙŠØ³ Ø§Ù„Ù‚Ø³Ù…</option>
+            <option value="deputy">Ù†Ø§Ø¦Ø¨ Ø±Ø¦ÙŠØ³ Ø§Ù„Ù‚Ø³Ù…</option>
           </select>
         </Field>
       )}
 
       {isSuperAdmin && role === "leader" && (
-        <Field label="الأقسام (يقدر يدير أكثر من قسم)">
+        <Field label="Ø§Ù„Ø£Ù‚Ø³Ø§Ù… (ÙŠÙ‚Ø¯Ø± ÙŠØ¯ÙŠØ± Ø£ÙƒØ«Ø± Ù…Ù† Ù‚Ø³Ù…)">
           <div className="flex flex-wrap gap-2">
             {activities.map((a) => (
               <button key={a.id} onClick={() => toggleActivity(a.id)} type="button"
@@ -1543,21 +1547,21 @@ function MemberForm({ initial, activities, currentUser, isSuperAdmin, defaultAct
       )}
 
       {role === "member" && (
-        <Field label="القسم">
+        <Field label="Ø§Ù„Ù‚Ø³Ù…">
           {isSuperAdmin ? (
             <select value={activityId} onChange={(e) => setActivityId(e.target.value)} className="w-full px-3 py-2.5 rounded-lg text-sm bg-white" style={inputStyle}>
-              <option value="">اختر قسمًا</option>
+              <option value="">Ø§Ø®ØªØ± Ù‚Ø³Ù…Ù‹Ø§</option>
               {activities.map((a) => <option key={a.id} value={a.id}>{a.name}</option>)}
             </select>
           ) : (
-            <p className="text-sm px-3 py-2.5 rounded-lg" style={{ background: "#F6F3EA" }}>{activityName || "—"}</p>
+            <p className="text-sm px-3 py-2.5 rounded-lg" style={{ background: "#F6F3EA" }}>{activityName || "â€”"}</p>
           )}
         </Field>
       )}
 
-      <Field label="الفصل / الشعبة (اختياري)"><input value={section} onChange={(e) => setSection(e.target.value)} placeholder="مثال: أول ثانوي - أ" className="w-full px-3 py-2.5 rounded-lg text-sm" style={inputStyle} /></Field>
+      <Field label="Ø§Ù„ÙØµÙ„ / Ø§Ù„Ø´Ø¹Ø¨Ø© (Ø§Ø®ØªÙŠØ§Ø±ÙŠ)"><input value={section} onChange={(e) => setSection(e.target.value)} placeholder="Ù…Ø«Ø§Ù„: Ø£ÙˆÙ„ Ø«Ø§Ù†ÙˆÙŠ - Ø£" className="w-full px-3 py-2.5 rounded-lg text-sm" style={inputStyle} /></Field>
       {error && <p className="text-xs mb-2" style={{ color: "#8C3B4A" }}>{error}</p>}
-      <button onClick={submit} className="w-full mt-2 py-2.5 rounded-lg text-white font-medium text-sm" style={{ background: "#139299" }}>حفظ العضو</button>
+      <button onClick={submit} className="w-full mt-2 py-2.5 rounded-lg text-white font-medium text-sm" style={{ background: "#139299" }}>Ø­ÙØ¸ Ø§Ù„Ø¹Ø¶Ùˆ</button>
     </Modal>
   );
 }
@@ -1567,16 +1571,16 @@ function BonusPointsForm({ member, onCancel, onSave }) {
   const [error, setError] = useState("");
   function submit() {
     const n = parseInt(amount, 10);
-    if (!Number.isFinite(n) || n === 0) { setError("اكتب رقمًا صحيحًا (استخدم رقمًا سالبًا للخصم)"); return; }
+    if (!Number.isFinite(n) || n === 0) { setError("Ø§ÙƒØªØ¨ Ø±Ù‚Ù…Ù‹Ø§ ØµØ­ÙŠØ­Ù‹Ø§ (Ø§Ø³ØªØ®Ø¯Ù… Ø±Ù‚Ù…Ù‹Ø§ Ø³Ø§Ù„Ø¨Ù‹Ø§ Ù„Ù„Ø®ØµÙ…)"); return; }
     onSave(n);
   }
   return (
-    <Modal title={`إضافة نقاط · ${member.name}`} onClose={onCancel}>
-      <Field label="عدد النقاط (استخدم رقمًا سالبًا مثل -1 للخصم اليدوي)">
+    <Modal title={`Ø¥Ø¶Ø§ÙØ© Ù†Ù‚Ø§Ø· Â· ${member.name}`} onClose={onCancel}>
+      <Field label="Ø¹Ø¯Ø¯ Ø§Ù„Ù†Ù‚Ø§Ø· (Ø§Ø³ØªØ®Ø¯Ù… Ø±Ù‚Ù…Ù‹Ø§ Ø³Ø§Ù„Ø¨Ù‹Ø§ Ù…Ø«Ù„ -1 Ù„Ù„Ø®ØµÙ… Ø§Ù„ÙŠØ¯ÙˆÙŠ)">
         <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} className="w-full px-3 py-2.5 rounded-lg text-sm" style={inputStyle} autoFocus />
       </Field>
       {error && <p className="text-xs mb-2" style={{ color: "#8C3B4A" }}>{error}</p>}
-      <button onClick={submit} className="w-full mt-2 py-2.5 rounded-lg text-white font-medium text-sm" style={{ background: "#139299" }}>حفظ</button>
+      <button onClick={submit} className="w-full mt-2 py-2.5 rounded-lg text-white font-medium text-sm" style={{ background: "#139299" }}>Ø­ÙØ¸</button>
     </Modal>
   );
 }
@@ -1587,16 +1591,16 @@ function PersonalTaskForm({ member, onCancel, onSave }) {
   const [dueDate, setDueDate] = useState("");
   const [error, setError] = useState("");
   function submit() {
-    if (!title.trim()) { setError("اكتب عنوان المهمة"); return; }
+    if (!title.trim()) { setError("Ø§ÙƒØªØ¨ Ø¹Ù†ÙˆØ§Ù† Ø§Ù„Ù…Ù‡Ù…Ø©"); return; }
     onSave({ title: title.trim(), description: description.trim(), dueDate, assignedTo: member.id });
   }
   return (
-    <Modal title={`مهمة شخصية · ${member.name}`} onClose={onCancel}>
-      <Field label="عنوان المهمة"><input value={title} onChange={(e) => setTitle(e.target.value)} placeholder="مثال: متابعة تجهيزات الإذاعة" className="w-full px-3 py-2.5 rounded-lg text-sm" style={inputStyle} autoFocus /></Field>
-      <Field label="تفاصيل (اختياري)"><textarea value={description} onChange={(e) => setDescription(e.target.value)} rows={3} className="w-full px-3 py-2.5 rounded-lg text-sm resize-none" style={inputStyle} /></Field>
-      <Field label="موعد التسليم (اختياري)"><input type="datetime-local" value={dueDate} onChange={(e) => setDueDate(e.target.value)} className="w-full px-3 py-2.5 rounded-lg text-sm" style={inputStyle} /></Field>
+    <Modal title={`Ù…Ù‡Ù…Ø© Ø´Ø®ØµÙŠØ© Â· ${member.name}`} onClose={onCancel}>
+      <Field label="Ø¹Ù†ÙˆØ§Ù† Ø§Ù„Ù…Ù‡Ù…Ø©"><input value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Ù…Ø«Ø§Ù„: Ù…ØªØ§Ø¨Ø¹Ø© ØªØ¬Ù‡ÙŠØ²Ø§Øª Ø§Ù„Ø¥Ø°Ø§Ø¹Ø©" className="w-full px-3 py-2.5 rounded-lg text-sm" style={inputStyle} autoFocus /></Field>
+      <Field label="ØªÙØ§ØµÙŠÙ„ (Ø§Ø®ØªÙŠØ§Ø±ÙŠ)"><textarea value={description} onChange={(e) => setDescription(e.target.value)} rows={3} className="w-full px-3 py-2.5 rounded-lg text-sm resize-none" style={inputStyle} /></Field>
+      <Field label="Ù…ÙˆØ¹Ø¯ Ø§Ù„ØªØ³Ù„ÙŠÙ… (Ø§Ø®ØªÙŠØ§Ø±ÙŠ)"><input type="datetime-local" value={dueDate} onChange={(e) => setDueDate(e.target.value)} className="w-full px-3 py-2.5 rounded-lg text-sm" style={inputStyle} /></Field>
       {error && <p className="text-xs mb-2" style={{ color: "#8C3B4A" }}>{error}</p>}
-      <button onClick={submit} className="w-full mt-2 py-2.5 rounded-lg text-white font-medium text-sm" style={{ background: "#139299" }}>إسناد المهمة</button>
+      <button onClick={submit} className="w-full mt-2 py-2.5 rounded-lg text-white font-medium text-sm" style={{ background: "#139299" }}>Ø¥Ø³Ù†Ø§Ø¯ Ø§Ù„Ù…Ù‡Ù…Ø©</button>
     </Modal>
   );
 }
@@ -1613,55 +1617,53 @@ function TaskForm({ initial, activities, members, defaultActivityId, isSuperAdmi
   const activityMembers = (members || []).filter((m) => belongsToActivity(m, activityId));
   function toggleMember(id) { setAssignedMemberIds((prev) => (prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id])); }
   function submit() {
-    if (!title.trim()) { setError(isAttendance ? "اكتب عنوان الجلسة" : "اكتب عنوان المهمة"); return; }
-    if (!activityId) { setError("اختر القسم"); return; }
-    onSave({ id: initial?.id, title: title.trim(), description: description.trim(), dueDate, activityId, type: selectedActivity?.type || "submission", assignedMemberIds: isAttendance ? assignedMemberIds : undefined });
+    if (!title.trim()) { setError(isAttendance ? "Ø§ÙƒØªØ¨ Ø¹Ù†ÙˆØ§Ù† Ø§Ù„Ø¬Ù„Ø³Ø©" : "Ø§ÙƒØªØ¨ Ø¹Ù†ÙˆØ§Ù† Ø§Ù„Ù…Ù‡Ù…Ø©"); return; }
+    if (!activityId) { setError("Ø§Ø®ØªØ± Ø§Ù„Ù‚Ø³Ù…"); return; }
+    onSave({ id: initial?.id, title: title.trim(), description: description.trim(), dueDate, activityId, type: selectedActivity?.type || "submission", assignedMemberIds });
   }
   return (
-    <Modal title={initial ? (isAttendance ? "تعديل الجلسة" : "تعديل المهمة") : (isAttendance ? "جلسة حضور جديدة" : "مهمة جديدة")} onClose={onCancel}>
-      <Field label="القسم">
+    <Modal title={initial ? (isAttendance ? "ØªØ¹Ø¯ÙŠÙ„ Ø§Ù„Ø¬Ù„Ø³Ø©" : "ØªØ¹Ø¯ÙŠÙ„ Ø§Ù„Ù…Ù‡Ù…Ø©") : (isAttendance ? "Ø¬Ù„Ø³Ø© Ø­Ø¶ÙˆØ± Ø¬Ø¯ÙŠØ¯Ø©" : "Ù…Ù‡Ù…Ø© Ø¬Ø¯ÙŠØ¯Ø©")} onClose={onCancel}>
+      <Field label="Ø§Ù„Ù‚Ø³Ù…">
         {isSuperAdmin ? (
           <select value={activityId} onChange={(e) => setActivityId(e.target.value)} className="w-full px-3 py-2.5 rounded-lg text-sm bg-white" style={inputStyle}>
             {activities.map((a) => <option key={a.id} value={a.id}>{a.name}</option>)}
           </select>
         ) : (
-          <p className="text-sm px-3 py-2.5 rounded-lg" style={{ background: "#F6F3EA" }}>{selectedActivity?.name || "—"}</p>
+          <p className="text-sm px-3 py-2.5 rounded-lg" style={{ background: "#F6F3EA" }}>{selectedActivity?.name || "â€”"}</p>
         )}
       </Field>
-      <Field label={isAttendance ? "عنوان الجلسة" : "عنوان المهمة"}>
-        <input value={title} onChange={(e) => setTitle(e.target.value)} placeholder={isAttendance ? "مثال: إذاعة يوم الأحد" : "مثال: تجهيز عرض الأسبوع"} className="w-full px-3 py-2.5 rounded-lg text-sm" style={inputStyle} autoFocus />
+      <Field label={isAttendance ? "Ø¹Ù†ÙˆØ§Ù† Ø§Ù„Ø¬Ù„Ø³Ø©" : "Ø¹Ù†ÙˆØ§Ù† Ø§Ù„Ù…Ù‡Ù…Ø©"}>
+        <input value={title} onChange={(e) => setTitle(e.target.value)} placeholder={isAttendance ? "Ù…Ø«Ø§Ù„: Ø¥Ø°Ø§Ø¹Ø© ÙŠÙˆÙ… Ø§Ù„Ø£Ø­Ø¯" : "Ù…Ø«Ø§Ù„: ØªØ¬Ù‡ÙŠØ² Ø¹Ø±Ø¶ Ø§Ù„Ø£Ø³Ø¨ÙˆØ¹"} className="w-full px-3 py-2.5 rounded-lg text-sm" style={inputStyle} autoFocus />
       </Field>
-      <Field label={isAttendance ? "تفاصيل الجلسة (اختياري)" : "وصف المهمة (اختياري)"}>
-        <textarea value={description} onChange={(e) => setDescription(e.target.value)} rows={3} placeholder="تفاصيل إضافية" className="w-full px-3 py-2.5 rounded-lg text-sm resize-none" style={inputStyle} />
+      <Field label={isAttendance ? "ØªÙØ§ØµÙŠÙ„ Ø§Ù„Ø¬Ù„Ø³Ø© (Ø§Ø®ØªÙŠØ§Ø±ÙŠ)" : "ÙˆØµÙ Ø§Ù„Ù…Ù‡Ù…Ø© (Ø§Ø®ØªÙŠØ§Ø±ÙŠ)"}>
+        <textarea value={description} onChange={(e) => setDescription(e.target.value)} rows={3} placeholder="ØªÙØ§ØµÙŠÙ„ Ø¥Ø¶Ø§ÙÙŠØ©" className="w-full px-3 py-2.5 rounded-lg text-sm resize-none" style={inputStyle} />
       </Field>
-      {isAttendance && (
-        <Field label={`الطلاب المطلوب حضورهم (${assignedMemberIds.length ? assignedMemberIds.length : "الكل"})`}>
-          {activityMembers.length === 0 ? (
-            <p className="text-xs" style={{ color: "#6B7280" }}>لا يوجد أعضاء في هذا القسم بعد.</p>
-          ) : (
-            <>
-              <div className="flex flex-wrap gap-2 max-h-40 overflow-y-auto p-1">
-                {activityMembers.map((m) => (
-                  <button key={m.id} type="button" onClick={() => toggleMember(m.id)}
-                    className="flex items-center gap-1.5 text-xs font-medium px-2.5 py-1.5 rounded-full"
-                    style={assignedMemberIds.includes(m.id) ? { background: selectedActivity.color, color: "white" } : { background: "white", border: "1px solid #E4DCC8" }}>
-                    <Avatar name={m.name} photo={m.photo} size={16} /> {m.name}
-                  </button>
-                ))}
-              </div>
-              <p className="text-xs mt-1.5" style={{ color: "#6B7280" }}>لو ما حددت أحد، تُعتبر الجلسة لكل أعضاء القسم.</p>
-            </>
-          )}
-        </Field>
-      )}
-      <Field label={isAttendance ? "موعد الجلسة (اختياري)" : "آخر موعد للتسليم (اختياري)"}>
+      <Field label={`${isAttendance ? "Ø§Ù„Ø·Ù„Ø§Ø¨ Ø§Ù„Ù…Ø·Ù„ÙˆØ¨ Ø­Ø¶ÙˆØ±Ù‡Ù…" : "Ø§Ù„Ø·Ù„Ø§Ø¨ Ø§Ù„Ù…ÙƒÙ„Ù‘ÙÙŠÙ† Ø¨Ù‡Ø°Ù‡ Ø§Ù„Ù…Ù‡Ù…Ø©"} (${assignedMemberIds.length ? assignedMemberIds.length : "Ø§Ù„ÙƒÙ„"})`}>
+        {activityMembers.length === 0 ? (
+          <p className="text-xs" style={{ color: "#6B7280" }}>Ù„Ø§ ÙŠÙˆØ¬Ø¯ Ø£Ø¹Ø¶Ø§Ø¡ ÙÙŠ Ù‡Ø°Ø§ Ø§Ù„Ù‚Ø³Ù… Ø¨Ø¹Ø¯.</p>
+        ) : (
+          <>
+            <div className="flex flex-wrap gap-2 max-h-40 overflow-y-auto p-1">
+              {activityMembers.map((m) => (
+                <button key={m.id} type="button" onClick={() => toggleMember(m.id)}
+                  className="flex items-center gap-1.5 text-xs font-medium px-2.5 py-1.5 rounded-full"
+                  style={assignedMemberIds.includes(m.id) ? { background: selectedActivity.color, color: "white" } : { background: "white", border: "1px solid #E4DCC8" }}>
+                  <Avatar name={m.name} photo={m.photo} size={16} /> {m.name}
+                </button>
+              ))}
+            </div>
+            <p className="text-xs mt-1.5" style={{ color: "#6B7280" }}>Ù„Ùˆ Ù…Ø§ Ø­Ø¯Ø¯Øª Ø£Ø­Ø¯ØŒ ØªÙØ¹ØªØ¨Ø± {isAttendance ? "Ø§Ù„Ø¬Ù„Ø³Ø©" : "Ø§Ù„Ù…Ù‡Ù…Ø©"} Ù„ÙƒÙ„ Ø£Ø¹Ø¶Ø§Ø¡ Ø§Ù„Ù‚Ø³Ù….</p>
+          </>
+        )}
+      </Field>
+      <Field label={isAttendance ? "Ù…ÙˆØ¹Ø¯ Ø§Ù„Ø¬Ù„Ø³Ø© (Ø§Ø®ØªÙŠØ§Ø±ÙŠ)" : "Ø¢Ø®Ø± Ù…ÙˆØ¹Ø¯ Ù„Ù„ØªØ³Ù„ÙŠÙ… (Ø§Ø®ØªÙŠØ§Ø±ÙŠ)"}>
         <input type="datetime-local" value={dueDate} onChange={(e) => setDueDate(e.target.value)} className="w-full px-3 py-2.5 rounded-lg text-sm" style={inputStyle} />
         <p className="text-xs mt-1" style={{ color: "#6B7280" }}>
-          {isAttendance ? "لو حددت موعدًا، أي عضو ما سجّل حضوره أو راجعتوه بعد فوات الموعد يُحتسب غائبًا تلقائيًا وتُخصم نقطتان." : "لو حددت موعدًا، سيُخصم تلقائيًا من نقاط أي عضو ما يسلّم المهمة بعد فوات الموعد."}
+          {isAttendance ? "Ù„Ùˆ Ø­Ø¯Ø¯Øª Ù…ÙˆØ¹Ø¯Ù‹Ø§ØŒ Ø£ÙŠ Ø¹Ø¶Ùˆ Ù…Ø§ Ø³Ø¬Ù‘Ù„ Ø­Ø¶ÙˆØ±Ù‡ Ø£Ùˆ Ø±Ø§Ø¬Ø¹ØªÙˆÙ‡ Ø¨Ø¹Ø¯ ÙÙˆØ§Øª Ø§Ù„Ù…ÙˆØ¹Ø¯ ÙŠÙØ­ØªØ³Ø¨ ØºØ§Ø¦Ø¨Ù‹Ø§ ØªÙ„Ù‚Ø§Ø¦ÙŠÙ‹Ø§ ÙˆØªÙØ®ØµÙ… Ù†Ù‚Ø·ØªØ§Ù†." : "Ù„Ùˆ Ø­Ø¯Ø¯Øª Ù…ÙˆØ¹Ø¯Ù‹Ø§ØŒ Ø³ÙŠÙØ®ØµÙ… ØªÙ„Ù‚Ø§Ø¦ÙŠÙ‹Ø§ Ù…Ù† Ù†Ù‚Ø§Ø· Ø£ÙŠ Ø¹Ø¶Ùˆ Ù…Ø§ ÙŠØ³Ù„Ù‘Ù… Ø§Ù„Ù…Ù‡Ù…Ø© Ø¨Ø¹Ø¯ ÙÙˆØ§Øª Ø§Ù„Ù…ÙˆØ¹Ø¯."}
         </p>
       </Field>
       {error && <p className="text-xs mb-2" style={{ color: "#8C3B4A" }}>{error}</p>}
-      <button onClick={submit} className="w-full mt-2 py-2.5 rounded-lg text-white font-medium text-sm" style={{ background: "#139299" }}>حفظ</button>
+      <button onClick={submit} className="w-full mt-2 py-2.5 rounded-lg text-white font-medium text-sm" style={{ background: "#139299" }}>Ø­ÙØ¸</button>
     </Modal>
   );
 }
@@ -1680,32 +1682,32 @@ function SubmissionForm({ tasks, initialTaskId, getExisting, onCancel, onSubmit 
     const ex = getExisting ? getExisting(id) : null;
     setImage(ex?.image || ""); setLink(ex?.link || ""); setNote(ex?.note || ""); setError("");
   }
-  async function handleImage(e) { const file = e.target.files?.[0]; if (!file) return; try { setImage(await compressImage(file, 640, 0.6)); } catch { setError("تعذر معالجة الصورة"); } }
+  async function handleImage(e) { const file = e.target.files?.[0]; if (!file) return; try { setImage(await compressImage(file, 640, 0.6)); } catch { setError("ØªØ¹Ø°Ø± Ù…Ø¹Ø§Ù„Ø¬Ø© Ø§Ù„ØµÙˆØ±Ø©"); } }
   function submit() {
-    if (!taskId) { setError("اختر المهمة"); return; }
-    if (!image && !link.trim()) { setError("أرفق صورة أو أضف رابط الملف"); return; }
+    if (!taskId) { setError("Ø§Ø®ØªØ± Ø§Ù„Ù…Ù‡Ù…Ø©"); return; }
+    if (!image && !link.trim()) { setError("Ø£Ø±ÙÙ‚ ØµÙˆØ±Ø© Ø£Ùˆ Ø£Ø¶Ù Ø±Ø§Ø¨Ø· Ø§Ù„Ù…Ù„Ù"); return; }
     onSubmit({ taskId, image, link: link.trim(), note: note.trim() });
   }
 
   return (
-    <Modal title="تسليم مهمة" onClose={onCancel}>
-      <Field label="المهمة">
+    <Modal title="ØªØ³Ù„ÙŠÙ… Ù…Ù‡Ù…Ø©" onClose={onCancel}>
+      <Field label="Ø§Ù„Ù…Ù‡Ù…Ø©">
         <select value={taskId} onChange={(e) => changeTask(e.target.value)} className="w-full px-3 py-2.5 rounded-lg text-sm bg-white" style={inputStyle}>
           {tasks.map((t) => <option key={t.id} value={t.id}>{t.title}</option>)}
         </select>
       </Field>
-      <Field label="إرفاق صورة (اختياري)">
+      <Field label="Ø¥Ø±ÙØ§Ù‚ ØµÙˆØ±Ø© (Ø§Ø®ØªÙŠØ§Ø±ÙŠ)">
         <input ref={fileRef} type="file" accept="image/*" onChange={handleImage} className="hidden" />
         {image ? (
           <div className="relative w-full h-32 rounded-lg overflow-hidden"><img src={image} alt="" className="w-full h-full object-cover" /><button onClick={() => setImage("")} className="absolute top-1.5 left-1.5 p-1 rounded-full bg-white/85"><X size={13} /></button></div>
         ) : (
-          <button onClick={() => fileRef.current?.click()} className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full" style={inputStyle}><Upload size={13} /> رفع صورة</button>
+          <button onClick={() => fileRef.current?.click()} className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full" style={inputStyle}><Upload size={13} /> Ø±ÙØ¹ ØµÙˆØ±Ø©</button>
         )}
       </Field>
-      <Field label="أو رابط الملف (فيديو، تصميم، مستند...)"><input value={link} onChange={(e) => setLink(e.target.value)} placeholder="الصق رابط الملف هنا" className="w-full px-3 py-2.5 rounded-lg text-sm" style={inputStyle} /></Field>
-      <Field label="ملاحظة (اختياري)"><textarea value={note} onChange={(e) => setNote(e.target.value)} rows={2} className="w-full px-3 py-2.5 rounded-lg text-sm resize-none" style={inputStyle} /></Field>
+      <Field label="Ø£Ùˆ Ø±Ø§Ø¨Ø· Ø§Ù„Ù…Ù„Ù (ÙÙŠØ¯ÙŠÙˆØŒ ØªØµÙ…ÙŠÙ…ØŒ Ù…Ø³ØªÙ†Ø¯...)"><input value={link} onChange={(e) => setLink(e.target.value)} placeholder="Ø§Ù„ØµÙ‚ Ø±Ø§Ø¨Ø· Ø§Ù„Ù…Ù„Ù Ù‡Ù†Ø§" className="w-full px-3 py-2.5 rounded-lg text-sm" style={inputStyle} /></Field>
+      <Field label="Ù…Ù„Ø§Ø­Ø¸Ø© (Ø§Ø®ØªÙŠØ§Ø±ÙŠ)"><textarea value={note} onChange={(e) => setNote(e.target.value)} rows={2} className="w-full px-3 py-2.5 rounded-lg text-sm resize-none" style={inputStyle} /></Field>
       {error && <p className="text-xs mb-2" style={{ color: "#8C3B4A" }}>{error}</p>}
-      <button onClick={submit} className="w-full mt-2 py-2.5 rounded-lg text-white font-medium text-sm" style={{ background: "#139299" }}>إرسال التسليم</button>
+      <button onClick={submit} className="w-full mt-2 py-2.5 rounded-lg text-white font-medium text-sm" style={{ background: "#139299" }}>Ø¥Ø±Ø³Ø§Ù„ Ø§Ù„ØªØ³Ù„ÙŠÙ…</button>
     </Modal>
   );
 }
@@ -1716,22 +1718,22 @@ function HighlightForm({ initial, onCancel, onSave }) {
   const [image, setImage] = useState(initial?.image || "");
   const [error, setError] = useState("");
   const fileRef = useRef(null);
-  async function handleImage(e) { const file = e.target.files?.[0]; if (!file) return; try { setImage(await compressImage(file, 640, 0.65)); } catch { setError("تعذر معالجة الصورة"); } }
-  function submit() { if (!title.trim()) { setError("اكتب عنوانًا"); return; } onSave({ id: initial?.id, title: title.trim(), description: description.trim(), image }); }
+  async function handleImage(e) { const file = e.target.files?.[0]; if (!file) return; try { setImage(await compressImage(file, 640, 0.65)); } catch { setError("ØªØ¹Ø°Ø± Ù…Ø¹Ø§Ù„Ø¬Ø© Ø§Ù„ØµÙˆØ±Ø©"); } }
+  function submit() { if (!title.trim()) { setError("Ø§ÙƒØªØ¨ Ø¹Ù†ÙˆØ§Ù†Ù‹Ø§"); return; } onSave({ id: initial?.id, title: title.trim(), description: description.trim(), image }); }
   return (
-    <Modal title={initial ? "تعديل العنصر" : "عنصر جديد في أبرز الأشياء"} onClose={onCancel}>
-      <Field label="عنوان"><input value={title} onChange={(e) => setTitle(e.target.value)} placeholder="مثال: انطلاق معرض الفنون" className="w-full px-3 py-2.5 rounded-lg text-sm" style={inputStyle} autoFocus /></Field>
-      <Field label="وصف (اختياري)"><textarea value={description} onChange={(e) => setDescription(e.target.value)} rows={3} className="w-full px-3 py-2.5 rounded-lg text-sm resize-none" style={inputStyle} /></Field>
-      <Field label="صورة (يُنصح بإضافتها لتظهر في المعرض المتقلب بالرئيسية)">
+    <Modal title={initial ? "ØªØ¹Ø¯ÙŠÙ„ Ø§Ù„Ø¹Ù†ØµØ±" : "Ø¹Ù†ØµØ± Ø¬Ø¯ÙŠØ¯ ÙÙŠ Ø£Ø¨Ø±Ø² Ø§Ù„Ø£Ø´ÙŠØ§Ø¡"} onClose={onCancel}>
+      <Field label="Ø¹Ù†ÙˆØ§Ù†"><input value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Ù…Ø«Ø§Ù„: Ø§Ù†Ø·Ù„Ø§Ù‚ Ù…Ø¹Ø±Ø¶ Ø§Ù„ÙÙ†ÙˆÙ†" className="w-full px-3 py-2.5 rounded-lg text-sm" style={inputStyle} autoFocus /></Field>
+      <Field label="ÙˆØµÙ (Ø§Ø®ØªÙŠØ§Ø±ÙŠ)"><textarea value={description} onChange={(e) => setDescription(e.target.value)} rows={3} className="w-full px-3 py-2.5 rounded-lg text-sm resize-none" style={inputStyle} /></Field>
+      <Field label="ØµÙˆØ±Ø© (ÙŠÙÙ†ØµØ­ Ø¨Ø¥Ø¶Ø§ÙØªÙ‡Ø§ Ù„ØªØ¸Ù‡Ø± ÙÙŠ Ø§Ù„Ù…Ø¹Ø±Ø¶ Ø§Ù„Ù…ØªÙ‚Ù„Ø¨ Ø¨Ø§Ù„Ø±Ø¦ÙŠØ³ÙŠØ©)">
         <input ref={fileRef} type="file" accept="image/*" onChange={handleImage} className="hidden" />
         {image ? (
           <div className="relative w-full h-32 rounded-lg overflow-hidden"><img src={image} alt="" className="w-full h-full object-cover" /><button onClick={() => setImage("")} className="absolute top-1.5 left-1.5 p-1 rounded-full bg-white/85"><X size={13} /></button></div>
         ) : (
-          <button onClick={() => fileRef.current?.click()} className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full" style={inputStyle}><Upload size={13} /> رفع صورة</button>
+          <button onClick={() => fileRef.current?.click()} className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full" style={inputStyle}><Upload size={13} /> Ø±ÙØ¹ ØµÙˆØ±Ø©</button>
         )}
       </Field>
       {error && <p className="text-xs mb-2" style={{ color: "#8C3B4A" }}>{error}</p>}
-      <button onClick={submit} className="w-full mt-2 py-2.5 rounded-lg text-white font-medium text-sm" style={{ background: "#139299" }}>حفظ</button>
+      <button onClick={submit} className="w-full mt-2 py-2.5 rounded-lg text-white font-medium text-sm" style={{ background: "#139299" }}>Ø­ÙØ¸</button>
     </Modal>
   );
 }
@@ -1742,22 +1744,22 @@ function PhotoForm({ onCancel, onSave }) {
   const [date, setDate] = useState("");
   const [error, setError] = useState("");
   const fileRef = useRef(null);
-  async function handleImage(e) { const file = e.target.files?.[0]; if (!file) return; try { setImage(await compressImage(file, 640, 0.6)); } catch { setError("تعذر معالجة الصورة"); } }
-  function submit() { if (!image) { setError("ارفع صورة أولًا"); return; } onSave({ image, caption: caption.trim(), date: date.trim() }); }
+  async function handleImage(e) { const file = e.target.files?.[0]; if (!file) return; try { setImage(await compressImage(file, 640, 0.6)); } catch { setError("ØªØ¹Ø°Ø± Ù…Ø¹Ø§Ù„Ø¬Ø© Ø§Ù„ØµÙˆØ±Ø©"); } }
+  function submit() { if (!image) { setError("Ø§Ø±ÙØ¹ ØµÙˆØ±Ø© Ø£ÙˆÙ„Ù‹Ø§"); return; } onSave({ image, caption: caption.trim(), date: date.trim() }); }
   return (
-    <Modal title="إضافة صورة إذاعة" onClose={onCancel}>
-      <Field label="الصورة">
+    <Modal title="Ø¥Ø¶Ø§ÙØ© ØµÙˆØ±Ø© Ø¥Ø°Ø§Ø¹Ø©" onClose={onCancel}>
+      <Field label="Ø§Ù„ØµÙˆØ±Ø©">
         <input ref={fileRef} type="file" accept="image/*" onChange={handleImage} className="hidden" />
         {image ? (
           <div className="relative w-full h-40 rounded-lg overflow-hidden"><img src={image} alt="" className="w-full h-full object-cover" /><button onClick={() => setImage("")} className="absolute top-1.5 left-1.5 p-1 rounded-full bg-white/85"><X size={13} /></button></div>
         ) : (
-          <button onClick={() => fileRef.current?.click()} className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full" style={inputStyle}><Upload size={13} /> رفع صورة</button>
+          <button onClick={() => fileRef.current?.click()} className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full" style={inputStyle}><Upload size={13} /> Ø±ÙØ¹ ØµÙˆØ±Ø©</button>
         )}
       </Field>
-      <Field label="وصف (اختياري)"><input value={caption} onChange={(e) => setCaption(e.target.value)} placeholder="مثال: إذاعة يوم الأحد" className="w-full px-3 py-2.5 rounded-lg text-sm" style={inputStyle} /></Field>
-      <Field label="التاريخ (اختياري)"><input value={date} onChange={(e) => setDate(e.target.value)} placeholder="مثال: 1447/02/10" className="w-full px-3 py-2.5 rounded-lg text-sm" style={inputStyle} /></Field>
+      <Field label="ÙˆØµÙ (Ø§Ø®ØªÙŠØ§Ø±ÙŠ)"><input value={caption} onChange={(e) => setCaption(e.target.value)} placeholder="Ù…Ø«Ø§Ù„: Ø¥Ø°Ø§Ø¹Ø© ÙŠÙˆÙ… Ø§Ù„Ø£Ø­Ø¯" className="w-full px-3 py-2.5 rounded-lg text-sm" style={inputStyle} /></Field>
+      <Field label="Ø§Ù„ØªØ§Ø±ÙŠØ® (Ø§Ø®ØªÙŠØ§Ø±ÙŠ)"><input value={date} onChange={(e) => setDate(e.target.value)} placeholder="Ù…Ø«Ø§Ù„: 1447/02/10" className="w-full px-3 py-2.5 rounded-lg text-sm" style={inputStyle} /></Field>
       {error && <p className="text-xs mb-2" style={{ color: "#8C3B4A" }}>{error}</p>}
-      <button onClick={submit} className="w-full mt-2 py-2.5 rounded-lg text-white font-medium text-sm" style={{ background: "#139299" }}>إضافة الصورة</button>
+      <button onClick={submit} className="w-full mt-2 py-2.5 rounded-lg text-white font-medium text-sm" style={{ background: "#139299" }}>Ø¥Ø¶Ø§ÙØ© Ø§Ù„ØµÙˆØ±Ø©</button>
     </Modal>
   );
 }
