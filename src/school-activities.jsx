@@ -48,7 +48,7 @@ const TABS = [
   { key: "sections", label: "الأقسام", icon: LayoutGrid },
   { key: "mytasks", label: "مهماتي", icon: ListChecks },
   { key: "messages", label: "الرسائل", icon: MessageCircle },
-  { key: "gallery", label: "صور الإذاعة", icon: ImageIcon },
+  { key: "gallery", label: "صور", icon: ImageIcon },
   { key: "students", label: "أسماء الطلاب", icon: Users },
   { key: "top", label: "أفضل الطلاب", icon: Award },
 ];
@@ -134,6 +134,35 @@ function Modal({ title, onClose, children, wide }) {
           <button onClick={onClose} className="p-1.5 rounded-full hover:bg-black/5 transition"><X size={18} color="#1B2430" /></button>
         </div>
         <div className="p-5 overflow-y-auto">{children}</div>
+      </div>
+    </div>
+  );
+}
+
+// عرض صورة/فيديو التسليم بحجمها الكامل المخزّن (أعلى جودة متوفرة) مع رابط تنزيل مباشر
+function MediaViewerModal({ media, onClose }) {
+  const isVideo = !!media.video;
+  const src = media.video || media.image;
+  const fileName = (media.title || "media").replace(/[^\w\u0600-\u06FF-]+/g, "_") + (isVideo ? ".mp4" : ".jpg");
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ background: "rgba(27,36,48,0.85)" }} onClick={onClose}>
+      <div className="max-w-3xl w-full" onClick={(e) => e.stopPropagation()}>
+        <div className="flex items-center justify-between mb-3">
+          <p className="text-white font-medium text-sm">{media.title}</p>
+          <div className="flex items-center gap-2">
+            <a href={src} download={fileName} className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full text-white" style={{ background: "#139299" }}>
+              <Upload size={13} style={{ transform: "rotate(180deg)" }} /> تنزيل بأعلى جودة
+            </a>
+            <button onClick={onClose} className="p-1.5 rounded-full bg-white/15 hover:bg-white/25"><X size={18} color="white" /></button>
+          </div>
+        </div>
+        <div className="rounded-2xl overflow-hidden bg-black flex items-center justify-center">
+          {isVideo ? (
+            <video src={src} controls autoPlay className="max-w-full max-h-[75vh]" />
+          ) : (
+            <img src={src} alt={media.title} className="max-w-full max-h-[75vh] object-contain" />
+          )}
+        </div>
       </div>
     </div>
   );
@@ -276,6 +305,7 @@ export default function SchoolActivitiesApp() {
   const [executionReportModal, setExecutionReportModal] = useState(null);
   const [executionReviewModal, setExecutionReviewModal] = useState(null);
   const [messageThreadWith, setMessageThreadWith] = useState(null);
+  const [mediaViewer, setMediaViewer] = useState(null);
   const [composeMessageModal, setComposeMessageModal] = useState(false);
 
   const [openActivityId, setOpenActivityId] = useState(null);
@@ -543,10 +573,10 @@ function showToast(msg, type = "success") { setToast({ msg, type }); setTimeout(
 
   // ---------- submissions ----------
   function getSubmission(memberId, taskId) { return data.submissions.find((s) => s.memberId === memberId && s.taskId === taskId) || null; }
-  function submitWork({ taskId, activityId, image, link, note }) {
+  function submitWork({ taskId, activityId, image, video, link, note }) {
     if (!currentUser) return;
     const existing = getSubmission(currentUser.id, taskId);
-    const record = { id: existing ? existing.id : "sub_" + Date.now(), taskId, activityId, memberId: currentUser.id, image, link, note, submittedAt: new Date().toISOString() };
+    const record = { id: existing ? existing.id : "sub_" + Date.now(), taskId, activityId, memberId: currentUser.id, image, video, link, note, submittedAt: new Date().toISOString() };
     const next = { ...data, submissions: existing ? data.submissions.map((s) => (s.id === existing.id ? record : s)) : [...data.submissions, record] };
     persist(next); setSubmissionModal(null); showToast("تم إرسال التسليم، يظهر الآن في صفحة القسم");
   }
@@ -824,6 +854,7 @@ function showToast(msg, type = "success") { setToast({ msg, type }); setTimeout(
               onDeleteSubmission={(s) => setConfirmDelete({ type: "submission", id: s.id, name: "التسليم" })}
               onAddMemberToSection={(activityId) => setMemberModal({ mode: "new", activityId })}
               onCheckIn={checkIn} onReviewAttendance={reviewAttendance}
+              onOpenMedia={(m) => setMediaViewer(m)}
             />
           )}
 
@@ -924,6 +955,8 @@ function showToast(msg, type = "success") { setToast({ msg, type }); setTimeout(
           onSend={(payload) => { sendMessage(payload); setMessageThreadWith(payload.toId); }}
         />
       )}
+
+      {mediaViewer && <MediaViewerModal media={mediaViewer} onClose={() => setMediaViewer(null)} />}
 
       {taskModal && (
         <TaskForm initial={taskModal.mode === "edit" ? taskModal.task : null} activities={data.activities} members={data.members}
@@ -1091,7 +1124,7 @@ function SectionsTab({
   data, currentUser, isSuperAdmin, canManageSection, onRequestLogin,
   openActivityId, setOpenActivityId, onAddActivity, onEditActivity, onDeleteActivity,
   onAddTask, onEditTask, onDeleteTask, getSubmission, onOpenSubmission, onDeleteSubmission, onAddMemberToSection,
-  onCheckIn, onReviewAttendance,
+  onCheckIn, onReviewAttendance, onOpenMedia,
 }) {
   const canOpen = (activityId) => isSuperAdmin || (currentUser && belongsToActivity(currentUser, activityId));
   const canSubmit = (activityId) => currentUser && currentUser.role !== "superadmin" && belongsToActivity(currentUser, activityId) && !currentUser.dismissed;
@@ -1240,7 +1273,17 @@ function SectionsTab({
                               {sub.link && <a href={sub.link} target="_blank" rel="noreferrer" className="text-xs flex items-center gap-1 truncate" style={{ color: "#2C4A6E" }}><Link2 size={11} /> رابط الملف</a>}
                               {sub.note && <p className="text-xs truncate" style={{ color: "#6B7280" }}>{sub.note}</p>}
                             </div>
-                            {sub.image && <img src={sub.image} alt="" className="w-9 h-9 rounded-lg object-cover shrink-0" />}
+                            {sub.image && (
+                              <button onClick={() => onOpenMedia({ image: sub.image, title: m?.name || "الصورة" })} className="shrink-0">
+                                <img src={sub.image} alt="" className="w-9 h-9 rounded-lg object-cover" />
+                              </button>
+                            )}
+                            {sub.video && (
+                              <button onClick={() => onOpenMedia({ video: sub.video, title: m?.name || "الفيديو" })} className="w-9 h-9 rounded-lg shrink-0 flex items-center justify-center relative overflow-hidden" style={{ background: "#1B2430" }}>
+                                <video src={sub.video} className="w-full h-full object-cover opacity-70" />
+                                <Film size={14} color="white" className="absolute" />
+                              </button>
+                            )}
                             {manage && <button onClick={() => onDeleteSubmission(sub)} className="p-1 rounded-full hover:bg-black/5 shrink-0"><Trash2 size={12} color="#8C3B4A" /></button>}
                           </div>
                         );
@@ -1586,11 +1629,11 @@ function GalleryTab({ data, canManageSite, onAddPhoto, onDeletePhoto }) {
   return (
     <>
       <div className="flex items-center justify-between mb-4">
-        <h3 className="font-bold text-lg" style={{ fontFamily: "'Almarai', sans-serif" }}>صور الإذاعة</h3>
+        <h3 className="font-bold text-lg" style={{ fontFamily: "'Almarai', sans-serif" }}>صور</h3>
         {canManageSite && <button onClick={onAddPhoto} className="flex items-center gap-1.5 text-sm font-medium px-3 py-1.5 rounded-full text-white hover:opacity-90 transition" style={{ background: "#139299" }}><Plus size={15} /> إضافة صورة</button>}
       </div>
       {data.photos.length === 0 ? (
-        <EmptyState icon={<ImageIcon size={22} color="#139299" />} title="لا توجد صور بعد" subtitle={canManageSite ? "أضف أول صورة من الإذاعة الصباحية." : "سيتم نشر صور الإذاعة هنا قريبًا."}
+        <EmptyState icon={<ImageIcon size={22} color="#139299" />} title="لا توجد صور بعد" subtitle={canManageSite ? "أضف أول صورة." : "سيتم نشر الصور هنا قريبًا."}
           action={canManageSite && <button onClick={onAddPhoto} className="mt-3 text-sm font-medium px-4 py-2 rounded-full text-white" style={{ background: "#139299" }}>إضافة صورة</button>} />
       ) : (
         <>
@@ -1598,7 +1641,7 @@ function GalleryTab({ data, canManageSite, onAddPhoto, onDeletePhoto }) {
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {data.photos.map((p) => (
               <div key={p.id} className="relative rounded-2xl overflow-hidden bg-white card-hover" style={{ border: "1px solid #E4DCC8" }}>
-                <div className="w-full h-32 flex items-center justify-center" style={{ background: "#F0EBDD" }}><img src={p.image} alt={p.caption || "صورة الإذاعة"} className="w-full h-full object-contain" /></div>
+                <div className="w-full h-32 flex items-center justify-center" style={{ background: "#F0EBDD" }}><img src={p.image} alt={p.caption || "صورة"} className="w-full h-full object-contain" /></div>
                 {(p.caption || p.date) && <div className="p-2.5">{p.caption && <p className="text-sm font-medium truncate">{p.caption}</p>}{p.date && <p className="text-xs" style={{ color: "#6B7280" }}>{p.date}</p>}</div>}
                 {canManageSite && <button onClick={() => onDeletePhoto(p)} className="absolute top-2 left-2 p-1.5 rounded-full bg-white/85 hover:bg-white"><Trash2 size={13} color="#8C3B4A" /></button>}
               </div>
@@ -2014,39 +2057,50 @@ function SubmissionForm({ tasks, initialTaskId, getExisting, onCancel, onSubmit 
   const [taskId, setTaskId] = useState(initialTaskId || tasks[0]?.id || "");
   const existing = getExisting ? getExisting(taskId) : null;
   const [image, setImage] = useState(existing?.image || "");
+  const [video, setVideo] = useState(existing?.video || "");
   const [link, setLink] = useState(existing?.link || "");
   const [note, setNote] = useState(existing?.note || "");
   const [error, setError] = useState("");
   const fileRef = useRef(null);
+  const videoRef = useRef(null);
 
   function changeTask(id) {
     setTaskId(id);
     const ex = getExisting ? getExisting(id) : null;
-    setImage(ex?.image || ""); setLink(ex?.link || ""); setNote(ex?.note || ""); setError("");
+    setImage(ex?.image || ""); setVideo(ex?.video || ""); setLink(ex?.link || ""); setNote(ex?.note || ""); setError("");
   }
   async function handleImage(e) { const file = e.target.files?.[0]; if (!file) return; try { setImage(await compressImage(file, 1280, 0.85)); } catch { setError("تعذر معالجة الصورة"); } }
+  async function handleVideo(e) { const file = e.target.files?.[0]; if (!file) return; try { setVideo(await readVideoFile(file)); setError(""); } catch (err) { setError(err.message); } }
   function submit() {
     if (!taskId) { setError("اختر المهمة"); return; }
-    if (!image && !link.trim()) { setError("أرفق صورة أو أضف رابط الملف"); return; }
-    onSubmit({ taskId, image, link: link.trim(), note: note.trim() });
+    if (!image && !video && !link.trim()) { setError("أرفق صورة أو فيديو أو أضف رابط الملف"); return; }
+    onSubmit({ taskId, image, video, link: link.trim(), note: note.trim() });
   }
 
   return (
-    <Modal title="تسليم مهمة" onClose={onCancel}>
+    <Modal title="تسليم مهمة" onClose={onCancel} wide>
       <Field label="المهمة">
         <select value={taskId} onChange={(e) => changeTask(e.target.value)} className="w-full px-3 py-2.5 rounded-lg text-sm bg-white" style={inputStyle}>
           {tasks.map((t) => <option key={t.id} value={t.id}>{t.title}</option>)}
         </select>
       </Field>
-      <Field label="إرفاق صورة (اختياري)">
+      <Field label="إرفاق صورة (اختياري، بأعلى جودة)">
         <input ref={fileRef} type="file" accept="image/*" onChange={handleImage} className="hidden" />
         {image ? (
-          <div className="relative w-full h-32 rounded-lg overflow-hidden"><img src={image} alt="" className="w-full h-full object-cover" /><button onClick={() => setImage("")} className="absolute top-1.5 left-1.5 p-1 rounded-full bg-white/85"><X size={13} /></button></div>
+          <div className="relative w-full rounded-lg overflow-hidden" style={{ background: "#F0EBDD" }}><img src={image} alt="" className="w-full max-h-56 object-contain" /><button onClick={() => setImage("")} className="absolute top-1.5 left-1.5 p-1 rounded-full bg-white/85"><X size={13} /></button></div>
         ) : (
           <button onClick={() => fileRef.current?.click()} className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full" style={inputStyle}><Upload size={13} /> رفع صورة</button>
         )}
       </Field>
-      <Field label="أو رابط الملف (فيديو، تصميم، مستند...)"><input value={link} onChange={(e) => setLink(e.target.value)} placeholder="الصق رابط الملف هنا" className="w-full px-3 py-2.5 rounded-lg text-sm" style={inputStyle} /></Field>
+      <Field label="أو إرفاق فيديو (ملفات صغيرة فقط)">
+        <input ref={videoRef} type="file" accept="video/*" onChange={handleVideo} className="hidden" />
+        {video ? (
+          <div className="relative w-full rounded-lg overflow-hidden"><video src={video} controls className="w-full max-h-56" /><button onClick={() => setVideo("")} className="absolute top-1.5 left-1.5 p-1 rounded-full bg-white/85"><X size={13} /></button></div>
+        ) : (
+          <button onClick={() => videoRef.current?.click()} className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full" style={inputStyle}><Upload size={13} /> رفع فيديو</button>
+        )}
+      </Field>
+      <Field label="أو رابط الملف (فيديو كبير، تصميم، مستند...)"><input value={link} onChange={(e) => setLink(e.target.value)} placeholder="الصق رابط الملف هنا" className="w-full px-3 py-2.5 rounded-lg text-sm" style={inputStyle} /></Field>
       <Field label="ملاحظة (اختياري)"><textarea value={note} onChange={(e) => setNote(e.target.value)} rows={2} className="w-full px-3 py-2.5 rounded-lg text-sm resize-none" style={inputStyle} /></Field>
       {error && <p className="text-xs mb-2" style={{ color: "#8C3B4A" }}>{error}</p>}
       <button onClick={submit} className="w-full mt-2 py-2.5 rounded-lg text-white font-medium text-sm" style={{ background: "#139299" }}>إرسال التسليم</button>
@@ -2089,7 +2143,7 @@ function PhotoForm({ onCancel, onSave }) {
   async function handleImage(e) { const file = e.target.files?.[0]; if (!file) return; try { setImage(await compressImage(file, 1280, 0.85)); } catch { setError("تعذر معالجة الصورة"); } }
   function submit() { if (!image) { setError("ارفع صورة أولًا"); return; } onSave({ image, caption: caption.trim(), date: date.trim() }); }
   return (
-    <Modal title="إضافة صورة إذاعة" onClose={onCancel}>
+    <Modal title="إضافة صورة" onClose={onCancel}>
       <Field label="الصورة">
         <input ref={fileRef} type="file" accept="image/*" onChange={handleImage} className="hidden" />
         {image ? (
